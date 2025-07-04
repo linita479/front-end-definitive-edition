@@ -1,0 +1,93 @@
+.e-card {
+  margin: 60px auto;
+  background: transparent;
+  box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
+  position: relative;
+  width: 240px;
+  height: 330px;
+  border-radius: 16px;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.e-card__wave {
+  position: absolute;
+  width: 540px;
+  height: 700px;
+  opacity: 0.6;
+  left: 0;
+  top: 0;
+  margin-left: -50%;
+  margin-top: -70%;
+  background: linear-gradient(744deg, #2196f3, #2979ff 60%, #00bcd4);
+}
+
+.infotop__icon {
+  width: 3em;
+  height: 3em;
+  margin: 0 auto;
+  fill: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infotop {
+  text-align: center;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 6em;
+  left: 0;
+  right: 0;
+  color: white;
+  font-weight: 600;
+  padding: 0 1rem;
+}
+
+
+
+.infotop__name {
+  font-size: 0.85rem;
+  font-weight: 300;
+  margin-top: 0.8em;
+}
+
+.e-card__wave:nth-child(2),
+.e-card__wave:nth-child(3) {
+  top: 210px;
+}
+
+.playing .e-card__wave {
+  border-radius: 40%;
+  animation: wave 3000ms infinite linear;
+}
+
+.e-card__wave {
+  border-radius: 40%;
+  animation: wave 55s infinite linear;
+}
+
+.playing .e-card__wave:nth-child(2) {
+  animation-duration: 4000ms;
+}
+
+.e-card__wave:nth-child(2) {
+  animation-duration: 50s;
+}
+
+.playing .e-card__wave:nth-child(3) {
+  animation-duration: 5000ms;
+}
+
+.e-card__wave:nth-child(3) {
+  animation-duration: 45s;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

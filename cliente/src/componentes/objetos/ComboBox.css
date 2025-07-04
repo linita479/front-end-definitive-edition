@@ -1,0 +1,37 @@
+.input-wrapper{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.input-wrapper__input-label{
+    font-size: 14px;     
+    font-weight: 600;
+    color: #2b2b2b;       
+}
+
+.input-wrapper__input-field{
+    width: 400px;
+    height: 38px;         
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #00cba9;
+    padding-left: 10px;
+    background-color:#eeeeee;
+    color: #1f1f1f;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.input-wrapper__input-field:hover{
+    background-color: #f4faff;
+}
+
+.input-wrapper__input-field:focus{
+    background-color: #f0fbff;
+    border-left-color: #00cba9;
+}
+
+

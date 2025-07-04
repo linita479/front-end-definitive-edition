@@ -1,0 +1,90 @@
+:root {
+    --blanco: #f6f5f7;
+    --cafe: #333;
+    --axul: #4bb6b7;
+    --blanco2: #fff;
+}
+
+.calendario {
+    width: 68vw;
+    display: inline-block;
+    background-color: var(--axul); /* Fondo azul moderno */
+    padding: 20px;
+    border-radius: 20px; /* Bordes suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+    font-family: 'Roboto', sans-serif; /* Tipografía moderna */
+}
+
+.calendario__meses_info {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+    background-color: var(--blanco); /* Fondo blanco claro */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.calendario__meses_info button {
+    border-radius: 18px;
+    padding: 10px 20px; /* Espaciado más amplio */
+    background-color: var(--cafe); /* Botón oscuro */
+    color: var(--blanco2); /* Texto blanco */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.calendario__meses_info button:hover {
+    background-color: var(--axul); /* Hover azul vibrante */
+    transform: scale(1.1); /* Efecto de zoom */
+}
+
+.calendario__dias {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 10px 20px;
+    text-align: center;
+     /* Fondo blanco puro */
+    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+.textoo{
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.calendario__contenedor {
+    background-color: var(--blanco); /* Fondo blanco claro */
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    gap: 10px; /* Espacio entre las celdas */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra interna */
+}
+
+.calendario__celda {
+    background-color: var(--blanco2); /* Fondo blanco puro */
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: var(--cafe); /* Texto oscuro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.calendario__celda:hover {
+    background-color: var(--axul); /* Azul vibrante para hover */
+    color: var(--blanco2); /* Texto blanco al hacer hover */
+    transform: scale(1.05); /* Pequeño zoom */
+}

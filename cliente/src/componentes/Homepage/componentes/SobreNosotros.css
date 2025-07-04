@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Variables de color */
+:root {
+  --card-azul-claro: #4da6ff;
+  --card-azul-medio: #267fb4;
+  --card-aguamarina: #00cfc8;
+  --card-azul-vivo: #008cff;
+  --card-celeste: #6fc9ff;
+}
+
+/* Contenedor general */
+.sobre-nosotros-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Estilos de la tarjeta */
+.e-card {
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  width: 260px;
+  height: 330px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.35);
+  background: transparent;
+  margin: 1rem 0;
+}
+
+.e-card__wave {
+  position: absolute;
+  width: 540px;
+  height: 700px;
+  opacity: 0.6;
+  left: 0;
+  top: 0;
+  margin-left: -50%;
+  margin-top: -70%;
+  background: var(--wave-color);
+  border-radius: 40%;
+  animation: wave 50s infinite linear;
+}
+
+.e-card__wave:nth-child(2) {
+  top: 210px;
+  animation-duration: 55s;
+}
+.e-card__wave:nth-child(3) {
+  top: 210px;
+  animation-duration: 60s;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.infotop {
+  text-align: center;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 6em;
+  left: 0;
+  right: 0;
+  color: #fff;
+  font-weight: 600;
+  padding: 0 1rem;
+}
+
+.infotop__icon {
+  width: 3em;
+  margin-top: -1em;
+  padding-bottom: 1em;
+}
+
+.infotop__name {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  text-transform: lowercase;
+}
+
+.e-card {
+  transition: transform 0.3s ease;
+}
+
+.e-card:hover {
+  transform: translateY(-20px);
+}
+

@@ -1,0 +1,57 @@
+.input-wrapper-etiqueta {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+
+.input-wrapper-etiqueta__input-label {
+    font-size: 14px;
+    color: #1b1b1b;
+    font-weight: 600;
+}
+
+.input-wrapper-etiqueta__input-field {
+    width: 400px;
+    height: 38px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    border-left: 4px solid #00cba9;
+    background-color:#eeeeee;
+    color: #000000;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    padding: 10px;
+}
+
+
+.input-wrapper-etiqueta__input-field::placeholder {
+    color: #a3a3a3;
+}
+
+.input-wrapper-etiqueta__input-field:hover {
+    background-color: #f0f8ff;
+}
+
+.input-wrapper-etiqueta__input-field:focus {
+    background-color: #e6f7ff;
+    border-left-color: #00cba9;
+}
+
+
+.input-wrapper-etiqueta__input-field[type="date"] {
+    color: #000;
+    background-color:#eeeeee;
+    border-left: 4px solid #00cba9;
+    padding-left: 12px;
+    height: 38px;
+    border-radius: 4px;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Icono calendario (Chrome/WebKit) */
+.input-wrapper-etiqueta__input-field[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(35%) sepia(100%) saturate(1500%) hue-rotate(170deg);
+    cursor: pointer;
+}

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fbfc;
+}
+
+/* 💡 BARRA DE NAVEGACIÓN */
+.navbar-homepage {
+  background-color: #ffffff;
+  padding: 1rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  margin: 1.5rem 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e1e8f0;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+/* LOGO */
+.navbar-homepage__navbar-logo {
+  display: flex;
+  align-items: center;
+  margin-right: 3rem;
+}
+
+/* MENÚ */
+.navbar-homepage__navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 3.5rem; /* ✅ más dispersión */
+}
+
+/* ÍTEMS DEL MENÚ */
+.navbar-homepage__navbar-item a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.navbar-homepage__navbar-item a:hover {
+  background-color: #e3f2fd;
+  transform: scale(1.07);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.15);
+  color: #0077cc;
+}
+
+.navbar-homepage__navbar-item a:hover svg {
+  color: #0077cc;
+}
+
+
+.navbar-homepage__navbar-item a::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-homepage__navbar-item a:hover::after {
+  width: 50%;
+  left: 25%;
+}
+
+/* BOTÓN DE LA DERECHA */
+.navbar-homepage__navbar-boton {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+

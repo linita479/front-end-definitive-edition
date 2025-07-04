@@ -1,0 +1,30 @@
+.calendario__card_cita{
+    background-color: var(--blanco2); /* Fondo blanco puro */
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: var(--cafe); /* Texto oscuro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.calendario__celda {
+    background-color: var(--blanco2); /* Fondo blanco puro */
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: var(--cafe); /* Texto oscuro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.calendario__card_cita:hover {
+    background-color: var(--axul); /* Azul vibrante para hover */
+    color: var(--blanco2); /* Texto blanco al hacer hover */
+    transform: scale(1.05); /* Pequeño zoom */
+}

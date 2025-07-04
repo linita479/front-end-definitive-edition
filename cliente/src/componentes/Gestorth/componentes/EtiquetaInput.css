@@ -1,0 +1,105 @@
+.etiquetaInput-contenedor {
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 16px; */
+  font-family: 'Poppins', sans-serif;
+}
+
+.etiquetaInput-label {
+  font-size: 14px;
+  color: #1b1b1b;
+  /* margin-bottom: 6px; */
+  font-weight: 600;
+  
+}
+
+.etiquetaInput-input {
+  width: 250px;
+  height: 38px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  border-left: 4px solid #00cba9; /* borde izquierdo aguamarina */
+  padding-left: 12px;
+  background-color:#eeeeee;
+  color: #000000;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  
+  
+}
+
+.etiquetaInput-input::placeholder {
+  color: #a3a3a3;
+}
+
+.etiquetaInput-input:hover {
+  background-color: #f0f8ff;
+}
+
+.etiquetaInput-input:focus {
+  background-color: #e6f7ff;
+  border-left: 4px solid#00cba9;
+}
+/* Para que los inputs tipo date también se vean igual */
+.etiquetaInput-input[type="date"] {
+  color: #000;
+  background-color:#eeeeee;
+  border-left: 4px solid #00cba9;
+  padding-left: 12px;
+  height: 38px;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+}
+
+/* Cambia el color del ícono de calendario (solo Chrome/WebKit) */
+.etiquetaInput-input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(35%) sepia(100%) saturate(1500%) hue-rotate(170deg);
+  cursor: pointer;
+}
+
+
+/* Estilo para inputs comunes */
+.input-formulario {
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  border-left: 4px solid #32cdd4; /* Línea izquierda aguamarina */
+  padding-left: 10px;
+  background-color: #eeeeee;
+  color: #1e1e1e;
+  transition: all 0.3s ease;
+}
+
+.input-formulario::placeholder {
+  color: #888;
+}
+
+.input-formulario:hover {
+  background-color: #eef6fd;
+}
+
+.input-formulario:focus {
+  background-color: #e0f4ff;
+  border-left: 4px solid #32cdd4;
+}
+
+/* 🎯 Input de archivo (file) personalizado */
+.input-file-formulario {
+  padding: 10px;
+  background-color: #eef6fd;
+  border-left: 4px solid #4cc2ff;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  color: #1e1e1e;
+  font-size: 14px;
+}
+
+.input-file-formulario:hover {
+  background-color: #d7f1ff;
+}
