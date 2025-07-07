@@ -1,37 +1,36 @@
-.input-wrapper{
-    display: flex;
-    flex-direction: column;
-    font-family: 'Poppins', sans-serif;
+.comboBox-container {
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 16px; */
+  font-family: 'Poppins', sans-serif;
+  gap: 15px;
 }
 
-
-.input-wrapper__input-label{
-    font-size: 14px;     
-    font-weight: 600;
-    color: #2b2b2b;       
+.comboBox-label {
+  font-size: 16px;
+  color: #1b1b1b;
+  /* margin-bottom: 6px; */
 }
 
-.input-wrapper__input-field{
-    width: 400px;
-    height: 38px;         
+.comboBox-select {
+    width: 300px;
+    height: 35px;
     border-radius: 5px;
     outline: none;
     border: 1px solid #e0e0e0;
-    border-left: 4px solid #00cba9;
-    padding-left: 10px;
-    background-color:#eeeeee;
+    border-left: 4px solid #32cdd4;
+    background-color: #eeeeee;
     color: #1f1f1f;
     transition: all 0.3s ease;
     font-family: inherit;
+    padding-left: 10px;
 }
 
-.input-wrapper__input-field:hover{
-    background-color: #f4faff;
+.comboBox-select:hover {
+  background-color: #eeeeee;
 }
 
-.input-wrapper__input-field:focus{
-    background-color: #f0fbff;
-    border-left-color: #00cba9;
+.comboBox-select:focus {
+  border-left: 4px solid#32cdd4;
+  background-color: #f0fbff;
 }
-
-

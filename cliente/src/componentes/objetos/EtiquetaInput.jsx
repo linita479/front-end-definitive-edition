@@ -1,20 +1,33 @@
 import React from "react";
-import "./EtiquetaInput.css"; // Assuming you have a CSS file for styling
+import './EtiquetaInput.css'; // asegúrate de crear este archivo
+
+
 const EtiquetaInput = (props) => {
+  const isFile = props.type === "file";
+
     return (
-        <div className="input-wrapper-etiqueta">
-            <label htmlFor={props.name} className="input-wrapper-etiqueta__input-label">
-                {props.label}
-            </label>
-            <input
-                type={props.type}
+        <div className="input-wrapper">
+            <label className="label-formulario" htmlFor={props.name}>{props.label}</label>
+            {isFile ? (
+                <input
+                type="file"
                 id={props.name}
-                placeholder=" "
-                className="input-wrapper-etiqueta__input-field"
                 {...props.register}
-            />
+                className="input-file-formulario"
+                />
+            ) : (
+                <input
+                type={props.type}
+                placeholder={props.placeholder}
+                {...props.register}
+                className="input-formulario"
+                />
+            )}
         </div>
     );
-    };
+};
 
 export default EtiquetaInput;
+
+
+

@@ -32,6 +32,10 @@ import SolicitudesActualizacion from './componentes/Gestorth/paginas/SolicitudAc
 import SolicitudContraseña from './componentes/login/SolicitudContraseña.jsx'
 import { div } from 'three/tsl'
 import Logo from './componentes/Homepage/componentes/Logo.jsx'
+import ModuloUsuarioSinRol from './componentes/usuarioSinRol/ModuloUsuarioSinRol.jsx'
+import ModuloPaciente from './componentes/pacientes/ModuloPaciente.jsx'
+import VerUsuarios from './componentes/gerente/VerUsuarios.jsx'
+import CrearAgenda from './componentes/Gestorth/paginas/CrearAgenda.jsx'
 
 function App() {
   const [isActive, setIsActive] = useState(false);
@@ -76,6 +80,12 @@ function App() {
             <ContenedorVerifPass />
           </div>
         } />
+        <Route path='/usuario_no_rol' element={
+          <div className=''>
+            <ModuloUsuarioSinRol/>
+          </div>
+        } />
+        
         <Route path='/admin' element={
           <div className=''>
           <ModuloGerente />
@@ -85,7 +95,14 @@ function App() {
           <Route path='centro/medico' element={<RegistroSede />} />
           <Route path='ver-centros-medicos' element={<VerCentrosMedicos />} />
           <Route path='ver-servicios' element={<VerServicios />} />
+          <Route path='ver-usuarios' element={<VerUsuarios/>} />
         </Route>
+
+        <Route path='/pacientes' element={
+          <div className=''>
+            <ModuloPaciente/>
+          </div>
+        } ></Route>
         <Route path='/auxpage' element={
           <div className=''>
             <ModuloCitas />
@@ -100,6 +117,7 @@ function App() {
           <Route path='experiencia' element={<ExperienciaLaboral />} />
           <Route path='consultar' element={<ListarPersonal />} />
           <Route path='solicitudes' element={<SolicitudesActualizacion />} />
+          <Route path='crear-agenda' element={<CrearAgenda/>} />
         </Route>
       </Routes>
      </BrowserRouter>

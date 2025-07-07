@@ -41,6 +41,9 @@ const LoginP = () => {
           // Aquí puedes redirigir al gestor de TH a su dashboard
           navigate('/modulo_th');
         }
+        if(!("tipo_usuario" in result)){
+          navigate('/usuario_no_rol');
+        }
         // navigate('/dashboard');
       } else {
         setError("server", { type: "server", message: "Tipo de usuario no permitido" });

@@ -1,0 +1,35 @@
+.ver-usuarios {
+  padding: 1.5rem;
+}
+
+.ver-usuarios__titulo {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.ver-usuarios__tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ver-usuarios__tabla th,
+.ver-usuarios__tabla td {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.ver-usuarios__btn {
+  margin: 0 4px;
+  padding: 6px 12px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.ver-usuarios__btn.editar {
+  background-color: #f39c12;
+}

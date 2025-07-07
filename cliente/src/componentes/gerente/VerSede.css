@@ -1,0 +1,60 @@
+.ver-centros-medicos {
+    margin-top: 20px;
+    width: 75vw;
+  padding: 24px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ver-centros-medicos__titulo {
+  text-align: center;
+  font-size: 26px;
+  color: #005187;
+  margin-bottom: 20px;
+}
+
+.ver-centros-medicos__tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ver-centros-medicos__tabla th,
+.ver-centros-medicos__tabla td {
+  padding: 12px 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+  font-size: 15px;
+}
+
+.ver-centros-medicos__tabla__thead {
+  background-color: #005187;
+  color: white;
+  font-weight: 600;
+}
+
+.ver-centros-medicos__tabla__tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.ver-centros-medicos__tabla__tr:hover {
+  background-color: #eaf3fb;
+  transition: 0.3s;
+}
+
+.ver-centros-medicos__editar-boton {
+  padding: 6px 12px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.ver-centros-medicos__editar-boton:hover {
+  background-color: #005ea6;
+}

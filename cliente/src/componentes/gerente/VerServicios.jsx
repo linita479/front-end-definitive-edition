@@ -1,5 +1,6 @@
 // VerServicios.jsx
 import React, { useState, useEffect } from 'react';
+import './VerServicios.css'; // Asegúrate de tener un archivo CSS para los estilos
 
 const VerServicios = () => {
   const [servicios, setServicios] = useState([]);
@@ -57,23 +58,23 @@ const VerServicios = () => {
         fetchServicios();
     }, [servicios]);
   return (
-    <div>
-      <h2>Servicios Registrados</h2>
-      <table border="1" cellPadding="8" cellSpacing="0">
-        <thead>
-          <tr>
+    <div className='ver-servicios'>
+      <h2 className='ver-servicios__titulo'>Servicios Registrados</h2>
+      <table border="1" cellPadding="8" cellSpacing="0" className='ver-servicios__tabla'>
+        <thead className='ver-servicios__tabla__thead'>
+          <tr className='ver-servicios__tabla__tr'>
             <th>Capítulo</th>
             <th>Nombre</th>
             <th>Estado</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='ver-servicios__tabla__tbody'>
           {servicios.map((servicio, index) => (
-            <tr key={index}>
+            <tr key={index} className='ver-servicios__tabla__tr'>
               <td>{servicio.capitulo}</td>
               <td>{servicio.nombre}</td>
               <td>{servicio.estado ? 'Activo' : 'Inactivo'}</td>
-              <td><input type="checkbox" checked={servicio.estado} onChange={() => {fetchServiciosActualizar(servicio.capitulo, servicio.estado)}} /></td>
+              <td><input className='ver-servicios__checkbox' type="checkbox" checked={servicio.estado} onChange={() => {fetchServiciosActualizar(servicio.capitulo, servicio.estado)}} /></td>
             </tr>
           ))}
         </tbody>

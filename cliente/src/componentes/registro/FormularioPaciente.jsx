@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import EtiquetaInput from "../objetos/EtiquetaInput";
 import Botones from "../objetos/Botones";
 import ComboBox from "../objetos/ComboBox";
+import emailjs from '@emailjs/browser';
 
 const FormularioPacienteExtendido = () => {
     const { register, handleSubmit, setError, formState: { errors } } = useForm();
@@ -36,6 +37,16 @@ const FormularioPacienteExtendido = () => {
             } else if (result.email) {
                 setError("email", { type: "server", message: result.email });
             } else {
+              emailjs.send('service_9oooaqk', 'template_7u6ca2t', {
+                passcode: result.codigo_verificacion,
+                email: data.email, // esto va en {{email}} si lo usas
+                }, 'kz1_aRd59lxAOFlmI')
+                .then(() => {
+                console.log('OTP enviado');
+                })
+                .catch((err) => {
+                console.error('Error al enviar el correo:', err);
+                });
                 setMostrarMensaje(true);
             }
         });

@@ -32,9 +32,11 @@ const Login = () => {
       }
 
       console.log("Éxito:", result);
-
+      sessionStorage.setItem("token", result.token);
+      sessionStorage.setItem("tipo_usuario", result.tipo_usuario);  
       if (result.tipo_usuario === "paciente") {
         console.log("Usuario autenticado correctamente");
+        navigate("/pacientes")
         
       } else {
         setError("server", { type: "server", message: "Tipo de usuario no permitido" });

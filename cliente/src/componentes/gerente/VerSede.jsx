@@ -1,6 +1,7 @@
 // VerCentrosMedicos.jsx
 import React, { useState, useEffect } from 'react';
 import EditarCentroModal from './EditarCentroModal.jsx';
+import './VerSede.css'; // Asegúrate de tener un archivo CSS para los estilos
 
 const VerCentrosMedicos = () => {
     const [centros, setCentros] = useState([]);
@@ -30,11 +31,11 @@ const VerCentrosMedicos = () => {
   }, [centros]);
 
   return (
-    <div>
-      <h2>Centros Médicos Registrados</h2>
-      <table border="1" cellPadding="8" cellSpacing="0">
-        <thead>
-          <tr>
+    <div className='ver-centros-medicos'>
+      <h2 className='ver-centros-medicos__titulo'>Centros Médicos Registrados</h2>
+      <table border="1" cellPadding="8" cellSpacing="0" className='ver-centros-medicos__tabla'>
+        <thead className='ver-centros-medicos__tabla__thead'>
+          <tr className='ver-centros-medicos__tabla__tr'>
             <th>NIT</th>
             <th>Nombre</th>
             <th>Dirección</th>
@@ -42,15 +43,15 @@ const VerCentrosMedicos = () => {
             <th>Email</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='ver-centros-medicos__tabla__tbody'>
           {centros.map((centro, index) => (
-            <tr key={index}>
+            <tr key={index} className='ver-centros-medicos__tabla__tr'>
               <td>{centro.nit}</td>
               <td>{centro.nombre}</td>
               <td>{centro.direccion}</td>
               <td>{centro.telefono}</td>
               <td>{centro.email}</td>
-              <td><button onClick={() => abrirModal(centro)}>Editar</button></td>
+              <td><button className='ver-centros-medicos__editar-boton' onClick={() => abrirModal(centro)}>Editar</button></td>
             </tr>
           ))}
         </tbody>

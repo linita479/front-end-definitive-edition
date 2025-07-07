@@ -1,0 +1,110 @@
+.info-usuario {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #f4f6fc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  max-width: 300px;
+  gap: 1rem;
+}
+
+.avatar i {
+  font-size: 3rem;
+  color: #1976d2;
+}
+
+.datos .nombre {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.datos .rol {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+.menu-opciones {
+  position: absolute;
+  margin-top: 0.5rem;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  padding: 0.5rem;
+  z-index: 100;
+}
+
+.menu-opciones button {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.menu-opciones button:hover {
+  background-color: #f0f0f0;
+}
+
+.sidebar__footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor del perfil */
+.sidebar__profile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* Ícono de usuario o avatar */
+.sidebar__avatar i {
+  font-size: 30px;
+  color: #00cba9;
+}
+
+/* Nombre del usuario */
+.sidebar__username {
+  font-size: 14px;
+  color: #00cba9;
+  font-weight: 500;
+}
+
+.sidebar__menu-opciones {
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  z-index: 10;
+  width: calc(100% - 20px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.sidebar__logout {
+  padding: 0.5rem;
+  width: 100%;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 0 0 6px 6px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar__logout i {
+  margin-right: 5px;
+}

@@ -1,0 +1,49 @@
+.modulo-paciente {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.curvas-top-paciente {
+  display: flex;
+  width: 100%;
+  height: 220px;
+  position: relative;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.curva-paciente {
+  flex: 1;
+  height: 100%;
+  background-color: #b3d9ff; /* Azul claro y suave */
+  margin: 0;
+  padding: 0;
+}
+
+.curva-izquierda-paciente {
+  border-bottom-right-radius: 100% 150%;
+}
+
+.curva-centro-paciente {
+  border-bottom-left-radius: 100% 150%;
+  border-bottom-right-radius: 100% 150%;
+}
+
+.curva-derecha-paciente {
+  border-bottom-left-radius: 100% 150%;
+}
+
+/* Asegura que estén completamente pegadas sin líneas */
+.curva-paciente + .curva-paciente {
+  margin-left: -2px;
+}
+
+.contenido-paciente {
+  padding: 2rem;
+  text-align: center;
+}

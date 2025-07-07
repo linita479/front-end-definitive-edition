@@ -1,10 +1,11 @@
 import React from "react";
-import "./Botones.css";
+import './Botones.css'
 
 const Botones = (props) =>{
     return(
         <div>
-            <button className="btnform" onClick={props.onClick ? props.onClick : null} type={props.tipo}>{props.name}</button>
+            <button className="btn-registro-medico" onClick={props.onClick ? props.onClick : () => {}}
+>{props.name}</button>
         </div>
     )
 }

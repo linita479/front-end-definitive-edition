@@ -1,0 +1,52 @@
+.ver-servicios {
+    margin-top: 20px;
+    width: 75vw;
+  padding: 50px ;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ver-servicios__titulo {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #004080;
+  font-weight: 600;
+}
+
+.ver-servicios__tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ver-servicios__tabla__thead {
+  background-color: #004080;
+  color: white;
+}
+
+.ver-servicios__tabla__tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.ver-servicios__tabla__tr:hover {
+  background-color: #e6f2ff;
+  transition: background-color 0.3s;
+}
+
+.ver-servicios__tabla th,
+.ver-servicios__tabla td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.ver-servicios__checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #004080;
+}

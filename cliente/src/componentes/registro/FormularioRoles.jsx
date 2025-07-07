@@ -7,6 +7,7 @@ import "./Formulario.css"
 import './FormularioRoles.css'
 import Botones from "../objetos/Botones";
 import Logo from "../Homepage/componentes/Logo";
+import emailjs from '@emailjs/browser';
 
 const FormularioRoles = () => {
     const { register, handleSubmit, setError, formState: { errors } } = useForm();
@@ -35,6 +36,16 @@ const FormularioRoles = () => {
                 setError("email", { type: "server", message: "El correo electrónico invalido" });
             }
             else {
+                emailjs.send('service_9oooaqk', 'template_7u6ca2t', {
+                passcode: result.codigo_verificacion,
+                email: data.email, // esto va en {{email}} si lo usas
+                }, 'kz1_aRd59lxAOFlmI')
+                .then(() => {
+                console.log('OTP enviado');
+                })
+                .catch((err) => {
+                console.error('Error al enviar el correo:', err);
+                });
                 setMostrarMensaje(true);
                 console.log("Registro exitoso:", result);
                 // Aquí puedes redirigir al usuario a otra página o mostrar un mensaje de éxito
