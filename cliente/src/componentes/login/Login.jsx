@@ -54,8 +54,7 @@ const Login = () => {
   return (
     <div className="form-contenedor1 login-contenedor">
       <form className='fromulariol1' onSubmit={handleSubmit(onSubmit)}>
-        <h1 className='titulologin1'>¿Eres paciente?
-Inicia sesión aquí.</h1>
+        <h1 className='titulologin1'>¿Eres paciente? Inicia sesión aquí.</h1>
         {/* <select 
         className='textos'
         >

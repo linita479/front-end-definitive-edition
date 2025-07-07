@@ -1,17 +1,17 @@
-.form-contenedor__registro_rol{
+.contenedor-verificar{
     width: 100%;
     height: 100vh;
+    /* border: solid black 2px; */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    font-family: 'Poppins', sans-serif;
     justify-content: center;
+    align-items: center;
+    gap: 100px;
 }
 
-.fromulario__registro__rol{
-    width: 600px;
-    height: 550px;
+.verificar-inputs{
+    width: 500px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -23,30 +23,20 @@
     /* box-sizing: border-box; */
     gap: 10px;
     margin-top: 50px;
+    /* justify-content: center; */
 }
 
-.contenedor-inputs-doble-rol{
-    height: auto;
-    display: flex;
+.verificar-cuenta-contenedor{
     width: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* justify-content: space-around; */
-    gap: 30px;
-    /* border: solid 2px salmon; */
-}
-
-.contenedor-etiqueta-for-rol{
+    height: auto;
+    /* border: salmon 2px solid; */
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    gap: 10px;
-    width: auto;
-    height: 80px;
-    /* align-items: center; */
+    align-items: center;
 }
 
-.header-form-registro-rol{
+.header-verificar-cuenta{
     width: 100%;
     height: 40px;
     display: flex;
@@ -58,26 +48,8 @@
     border-bottom: solid 3px  hsl(197, 100%, 50%);
 }
 
-.tlt-header-formulario-rol{
+.header-verificar-cuenta-titulo{
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     font-weight: 500;
-
-}
-
-
-.cont-tlt-form-rol{
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #32A89C;
-    color: white;
-}
-
-.tlt-from-paciente{
-    font-family: 'Poppins', sans-serif;
-    font-size: 26px;
-    font-weight: 600;
 }

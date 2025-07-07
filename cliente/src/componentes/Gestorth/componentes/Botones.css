@@ -3,7 +3,7 @@
   width: 6.5em;
   height: 2.3em;
   margin: 0.5em;
-  background: linear-gradient(90deg, #32A89C); /* Verde a aguamarina */
+  background:  hsl(197, 100%, 50%); /* Verde a aguamarina */
   color: white;
   border: none;
   border-radius: 0.625em;
@@ -22,7 +22,7 @@
 
 .btn-registro-medico::after {
   content: "";
-  background: #94f5e4;
+  background:  hsl(197, 97%, 65%);
   position: absolute;
   z-index: -1;
   left: -20%;

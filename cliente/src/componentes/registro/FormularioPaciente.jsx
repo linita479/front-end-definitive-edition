@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import EtiquetaInput from "../objetos/EtiquetaInput";
 import Botones from "../objetos/Botones";
 import ComboBox from "../objetos/ComboBox";
+import Logo from "../Homepage/componentes/Logo";
 
 const FormularioPacienteExtendido = () => {
     const { register, handleSubmit, setError, formState: { errors } } = useForm();
@@ -49,11 +50,11 @@ const FormularioPacienteExtendido = () => {
             </Mensaje>
 
             <div className="form-contenedor__registro">
-              <div className="cont-tlt-form-paciente">
-                <h1 className="tlt-from-paciente">Formulario de Registro</h1>
-              </div>
+              <Logo />
   <form className="fromulariol" onSubmit={handleSubmit(onSubmit)}>
-
+    <header className="header-form-registro-rol">
+      <h1 className="tlt-header-formulario-rol">Registro del paciente</h1>
+    </header>
     <div className="contenedor-inputs-doble">
       <EtiquetaInput
         label="Número de identificación"

@@ -5,6 +5,7 @@ import EtiquetaInput from "../componentes/EtiquetaInput";
 import ComboBox from "../componentes/ComboBox";
 import Botones from "../componentes/Botones";
 import './Experiencia.css'
+import Logo from "../../Homepage/componentes/Logo";
 
 const ExperienciaLaboral = () =>{
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -67,28 +68,32 @@ const ExperienciaLaboral = () =>{
 
     return(
         <>
-        <div>
-            <h1 className="titulo-registro">Registrar experiencia laboral</h1>
-<div className="contenedor-busqueda">
-  <div className="fondo-blanco">
-    <p className="texto-busqueda">Buscar por número de documento</p>
-    <div className="searchBox">
-      <input
-        className="searchInput"
-        type="text"
-        placeholder="Número de documento"
-        {...register("nro_doc")}
-      />
-      <button className="searchButton" onClick={() => buscarUsuario(watch("nro_doc"))}>
-        {/* Lupa moderna (Heroicons) */}
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" width="24" height="24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M16.65 16.65A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
-        </svg>
-      </button>
-    </div>
-  </div>
-</div>
-            <form action="" onSubmit={handleSubmit(onSubmit)} className="formulario-registro">
+        <div className="josessasa">
+            <Logo />
+            <div className="super-contenedor">
+                <div className="contenedor-busqueda">
+                <div className="fondo-blanco">
+                    <p className="texto-busqueda">Buscar por número de documento</p>
+                    <div className="searchBox">
+                    <input
+                        className="searchInput"
+                        type="text"
+                        placeholder="Número de documento"
+                        {...register("nro_doc")}
+                    />
+                        <button className="searchButton" onClick={() => buscarUsuario(watch("nro_doc"))}>
+                            {/* Lupa moderna (Heroicons) */}
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" width="24" height="24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M16.65 16.65A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <form action="" onSubmit={handleSubmit(onSubmit)} className="formulario-registro-academico">
+                <header className="header-form-personal-medico">
+                    <h1 className="header-reGistro-medico-titulo">Registrar experiencia laboral</h1>
+                </header>
                 <EtiquetaInput label="Nombre de la empresa" type="text" placeholder="Ingrese el nombre de la empresa" register={register("nombre_empresa")} />
                 <EtiquetaInput label="Cargo desempeñado" type="text" placeholder="Ingrese el cargo desempeñado" register={register("cargo")} />
                 <EtiquetaInput label="Fecha de inicio" type="date" placeholder="Fecha de inicio" register={register("fecha_inicio")} />
@@ -106,6 +111,7 @@ const ExperienciaLaboral = () =>{
                 <EtiquetaInput label="Soporte" type="file" register={register("soporte")} placeholder="Sube el soporte de la experiencia laboral" />
                 <Botones name="Registrar" tipo="submit" />
             </form>
+            </div>
         </div>
         </>
     )

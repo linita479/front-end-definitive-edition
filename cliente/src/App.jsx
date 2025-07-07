@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom'
 
-import Login from './componentes/login/LogIn.jsx'
+import Login from './componentes/login/Login.jsx'
 import Overly from './componentes/login/Overly.jsx'
 import LoginP from './componentes/login/LoginP.jsx'
 import FormularioPaciente from './componentes/registro/FormularioPaciente.jsx'
@@ -42,7 +42,9 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path="/login" element={
           <div className='jesus'>
-            <Logo></Logo>
+            <div className='cont-logo'>
+              <Logo></Logo>
+            </div>
             <div className={`container ${isActive ? 'right-panel-active' : ''}`} id='container'>
               <LoginP />
               <Login />

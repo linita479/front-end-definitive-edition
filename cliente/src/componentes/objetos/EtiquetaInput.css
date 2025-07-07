@@ -16,7 +16,7 @@
     border-radius: 4px;
     outline: none;
     border: none;
-    border-left: 4px solid #00cba9;
+    border-left: 4px solid  hsl(197, 100%, 65%);;
     background-color:#eeeeee;
     color: #000000;
     transition: all 0.3s ease;
@@ -35,14 +35,14 @@
 
 .input-wrapper-etiqueta__input-field:focus {
     background-color: #e6f7ff;
-    border-left-color: #00cba9;
+    border-left-color:  hsl(197, 100%, 65%);
 }
 
 
 .input-wrapper-etiqueta__input-field[type="date"] {
     color: #000;
     background-color:#eeeeee;
-    border-left: 4px solid #00cba9;
+    border-left: 4px solid  hsl(197, 100%, 65%);;
     padding-left: 12px;
     height: 38px;
     border-radius: 4px;

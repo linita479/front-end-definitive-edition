@@ -65,7 +65,7 @@ const LoginP = () => {
               <input
           type="text"
           placeholder="Número de identificación"
-          className='textos error'
+          className='textos errorr'
             {...register('nro_doc', { 
               required: 'Este campo es obligatorio',
               pattern: {

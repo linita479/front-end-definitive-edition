@@ -1,8 +1,8 @@
 .btnform{
-    width: 6.5em;
+    width: 300px;
     height: 2.3em;
     margin: 0.5em;
-    background: #32A89C;
+    background:  hsl(197, 100%, 50%);
     color: white;
     border: none;
     border-radius: 0.625em;
@@ -19,7 +19,7 @@
 
 .btnform:after {
     content: "";
-    background: #94f5e4;
+    background: hsl(197, 98%, 77%);
     position: absolute;
     z-index: -1;
     left: -20%;

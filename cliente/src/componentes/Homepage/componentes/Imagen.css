@@ -1,142 +1,237 @@
+/* ================= HERO PRINCIPAL ================= */
 .hero-container {
-    position: relative;
-    height: 550px;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  position: relative;
+  height: 550px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
 }
 
 .hero-container__overlay-hero {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 171, 214, 0.4);
-    z-index: 1;
-}
-
-.hero-container__hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: white;
-    gap: 30px;
-    font-family: 'Poppins', sans-serif;
-    padding: 0 2rem;
-}
-
-.hero-container__hero-content .hero-container__hero-content__titulo {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.hero-container__hero-content .hero-container__hero-content__prrf {
-    font-size: 1.5rem;
-    font-weight: 400;
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
 }
 
 .hero-container__background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    z-index: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
-
-/* From Uiverse.io - Modificados a tonos azul cielo */
-/* Botón moderno en tonos azul cielo */
-.hero-container__hero-content_buttonr {
+.hero-container__hero-content {
   position: relative;
-  margin: 0;
-  padding: 0.8em 1em;
-  outline: none;
-  text-decoration: none;
+  z-index: 2;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  gap: 30px;
+  padding: 0 2rem;
+  max-width: 800px;
+}
+
+.hero-container__hero-content__titulo {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero-container__hero-content__prrf {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.hero-container__hero-content_buttonr {
+  padding: 0.8em 1em;
   border: none;
-  background-color: #00BFFF; /* Azul cielo fuerte */
+  background: #00bfff;
   border-radius: 10px;
-  color: #ffffff;
+  color: #fff;
   font-weight: 700;
   font-size: 18px;
-  font-family: 'Poppins', sans-serif;
-  z-index: 0;
-  overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .hero-container__hero-content_buttonr:hover {
-  animation: sh0 0.5s ease-in-out both;
-  background-color: #42BFF5; /* Azul cielo más visible */
+  background: #42bff5;
 }
 
-.hero-container__hero-content_buttonr:hover .hero-container__hero-content_buttonr-text {
-  animation: storm 0.7s ease-in-out both;
-  animation-delay: 0.06s;
+/* ================= SWIPER ================= */
+.banner-swiper,
+.banner-swiper .swiper-slide {
+  width: 100%;
+  height: 550px;
 }
 
-.hero-container__hero-content_buttonr::before,
-.hero-container__hero-content_buttonr::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: #ffffff;
-  opacity: 0;
-  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
-              opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
-  z-index: -1;
-  transform: translate(100%, -25%) translate3d(0, 0, 0);
+.banner-swiper .swiper-pagination {
+  position: absolute !important;
+  bottom: 20px !important;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
 }
 
-.hero-container__hero-content_buttonr:hover::before,
-.hero-container__hero-content_buttonr:hover::after {
-  opacity: 0.15;
-  transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1),
-              opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.6);
 }
 
-.hero-container__hero-content_buttonr:hover::before {
-  transform: translate3d(50%, 0, 0) scale(0.9);
+.swiper-pagination-bullet-active {
+  background: #00cba9;
 }
 
-.hero-container__hero-content_buttonr:hover::after {
-  transform: translate(50%, 0) scale(1.1);
+/* ================= INFO BANNER ─ rediseño ================= */
+
+
+/* 🔮 Anillo interior “glass” */
+.info-banner::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:20px;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(6px);
+  z-index:0;
 }
 
-/* Animaciones */
-@keyframes sh0 {
-  0%   { transform: rotate(0deg) translate3d(0, 0, 0); }
-  25%  { transform: rotate(7deg) translate3d(0, 0, 0); }
-  50%  { transform: rotate(-7deg) translate3d(0, 0, 0); }
-  75%  { transform: rotate(1deg) translate3d(0, 0, 0); }
-  100% { transform: rotate(0deg) translate3d(0, 0, 0); }
+/* ===== Columna IMG ===== */
+.info-banner__image-box{
+  flex:1 1 50%;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border-top-right-radius:20px;
+  border-bottom-right-radius:20px;
+  z-index:1;
 }
 
-@keyframes storm {
-  0%   { transform: translate3d(0, 0, 0) scale(1); }
-  50%  { transform: translate3d(0, -5px, 0) scale(1.1); }
-  100% { transform: translate3d(0, 0, 0) scale(1); }
+
+.info-banner__img{
+  width:80%;
+  max-width:300px;
+  border-radius:18px;
+  object-fit:cover;
+  transition:transform .5s cubic-bezier(.25,.8,.25,1);
+  box-shadow:0 8px 20px rgba(76,29,149,.25);
+}
+.info-banner__img:hover{
+  transform:scale(1.08);
+}
+
+/* ===== Columna CONTENIDO ===== */
+.info-banner__content{
+  flex:1 1 50%;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:22px;
+  padding:60px 50px;
+  z-index:1;
+  color:#312e81;
+  font-family:"Poppins",sans-serif;
 }
 
 
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(18px)}
+}
 
+/* ================= RESPONSIVE ================= */
+@media(max-width:1024px){
+  .info-banner__titulo{font-size:34px}
+  .info-banner__texto{font-size:16px}
+  .info-banner__img{max-width:260px}
+}
+
+@media(max-width:768px){
+  .info-banner{
+    flex-direction:column;
+    height:auto;
+    padding:2px;
+  }
+  .info-banner__image-box,
+  .info-banner__content{
+    width:100%;
+    border-radius:0;
+  }
+  .info-banner__image-box{padding:40px 0}
+  .info-banner__img{max-width:220px;width:70%}
+  .info-banner__content{padding:30px 24px}
+}
+
+@media(max-width:480px){
+  .info-banner__titulo{font-size:28px}
+  .info-banner__texto{font-size:15px}
+  .info-banner__img{max-width:180px}
+}
+
+/* ================= INFO BANNER (imagen de fondo + overlay aguamarina) ================= */
+.info-banner{
+  position:relative;
+  height:550px;
+  width:100%;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  font-family:"Poppins",sans-serif;
+}
+
+.info-banner__overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0, 174, 255, 0.35); /* filtro aguamarina */
+  backdrop-filter:blur(2px);
+  z-index:1;
+}
+
+.info-banner__content{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+  padding:0 2rem;
+  text-align:center;
+  color:#fff;
+}
+
+.info-banner__titulo{
+  font-size:3rem;
+  font-weight:700;
+  margin-bottom:1rem;
+}
+
+.info-banner__texto{
+  font-size:1.5rem;
+  line-height:1.6;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .info-banner__titulo{font-size:2.2rem}
+  .info-banner__texto{font-size:1.2rem}
+}
+
+@media(max-width:480px){
+  .info-banner__titulo{font-size:1.8rem}
+  .info-banner__texto{font-size:1rem}
+}
 
