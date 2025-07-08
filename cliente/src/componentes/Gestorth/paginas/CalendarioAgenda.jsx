@@ -1,26 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
-import "./CalendarioAgenda.css"
+import "./CalendarioAgenda.css";
 
 const CalendarioSeleccion = ({ onChangeDias }) => {
   const [selectedDays, setSelectedDays] = useState([]);
 
   const handleSelect = (days) => {
-    console.log(days)
   if (!days) {
     setSelectedDays([]);
+    onChangeDias({ dias: [], mes: null });
     return;
   }
 
-  const diasNumericos = Array.isArray(days)
-    ? days.map(fecha => {
-        const dateObj = new Date(fecha);
-        return !isNaN(dateObj) ? dateObj.getDate() : null;
-      }).filter(dia => dia !== null)
-    : [new Date(days).getDate()];
+  const fechas = Array.isArray(days) ? days : [days];
+  setSelectedDays(fechas);
 
-  setSelectedDays(diasNumericos);
+  const diasNumericos = fechas
+    .map((fecha) => new Date(fecha).getDate())
+    .filter((dia) => !isNaN(dia));
+
+  const primerFecha = new Date(fechas[0]);
+  const mesTexto = primerFecha.toISOString().slice(0, 7); // Ej: "2025-05"
+
+  onChangeDias({
+    dias: diasNumericos,
+    mes: mesTexto, // formato "YYYY-MM"
+  });
 };
 
 
@@ -37,4 +43,4 @@ const CalendarioSeleccion = ({ onChangeDias }) => {
   );
 };
 
-export default CalendarioSeleccion
+export default CalendarioSeleccion;
