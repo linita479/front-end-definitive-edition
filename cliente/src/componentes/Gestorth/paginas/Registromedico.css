@@ -3,7 +3,19 @@
 .cont-formulario-registrar-personalm{
   width: 100%;
   height: auto;
-  border: solid black 2px;
+  /* border: solid black 2px; */
+}
+
+.header-form-personal-medico{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color:  hsl(197, 100%, 65%);
+    color: white;
+    border-bottom: solid 3px  hsl(197, 100%, 50%);
 }
 .josessasa{
     width: 100%;
@@ -13,12 +25,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
     background-color: #f9f9fb; /* tono muy suave para resaltar contenido */
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* sombra suave */
-    padding: 40px;
-    margin-top: 20px;
+    /* padding: 40px; */
+    /* margin-top: 20px; */
     font-family: 'Poppins', sans-serif;
     transition: all 0.3s ease-in-out;
   
@@ -38,14 +50,14 @@
 }
 .formulario-registro {
   width: 800px;
-  max-height: 500px; /* 🔽 ALTURA VISIBLE antes del scroll */
-  overflow-y: auto;   /* 🔁 Habilita scroll vertical */
+  height: 750px;
+  overflow-y: auto;  
   margin-top: 20px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
-  padding: 32px;
-  box-sizing: border-box;
+  /* padding: 32px; */
+  /* box-sizing: border-box; */
 }
 .contenedor-etiqueta-form-medico{
   width: 100%;
@@ -63,6 +75,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.header-reGistro-medico-titulo{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.cont-logo-flex-start{
+  width: 100%;
+  height: 100px;
+  /* border: solid salmon 2px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 50px;
 }
 
 

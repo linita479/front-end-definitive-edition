@@ -1,36 +1,34 @@
-/* Botón elegante para formulario de registro de médico */
-.btn-registro-medico {
-  width: 6.5em;
-  height: 2.3em;
-  margin: 0.5em;
-  background: linear-gradient(90deg, #32A89C); /* Verde a aguamarina */
-  color: white;
-  border: none;
-  border-radius: 0.625em;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  transition: color 0.5s ease;
+.btnform{
+    width: 300px;
+    height: 2.3em;
+    margin: 0.5em;
+    background:  hsl(197, 100%, 50%);
+    color: white;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
 }
 
 .btn-registro-medico:hover {
   color: #0f172a; /* Oscuro para contraste */
 }
 
-.btn-registro-medico::after {
-  content: "";
-  background: #94f5e4;
-  position: absolute;
-  z-index: -1;
-  left: -20%;
-  right: -20%;
-  top: 0;
-  bottom: 0;
-  transform: skewX(-45deg) scale(0, 1);
-  transition: all 0.5s ease;
+.btnform:after {
+    content: "";
+    background: hsl(197, 98%, 77%);
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
 }
 
 .btn-registro-medico:hover::after {

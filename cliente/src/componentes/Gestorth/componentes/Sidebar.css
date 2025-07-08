@@ -1,269 +1,224 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
-/* === CONTENEDOR PRINCIPAL DE LA SIDEBAR === */
-.sidebar__container {
-  height: 100vh;
-  width: 250px;
-  background-color: #fff;
-  color: #00cba9;
+/* ══════════════ variables ══════════════ */
+:root {
+  --sb-w:        250px;    /* ancho normal  */
+  --sb-w-mini:    64px;    /* ancho colapsado */
+  --c-primary:   hsl(197, 100%, 65%);
+  --c-bg:       rgba(255,255,255,.18);
+  --c-stroke:   hsl(197, 100%, 65%);
+  --blur:        12px;
+}
+
+/* ══════════════ base ══════════════ */
+.sb {
   position: fixed;
-  top: 0;
-  left: 0;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  transition: width 0.3s ease;
+  inset: 0 auto 0 0;
+  width: var(--sb-w);
   display: flex;
   flex-direction: column;
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
-  overflow-y: visible;
+  backdrop-filter: blur(var(--blur));
+  background: var(--c-bg);
+  border-right: 2px solid var(--c-stroke);
+  transition: width 0.35s cubic-bezier(.4, 0, .2, 1);
+  font-family: "Poppins", sans-serif;
+}
+.sb--collapsed {
+  width: var(--sb-w-mini);
 }
 
-/* .sidebar__container :hover{
-    color: #fff;
-} */
-
-.sidebar__container.collapsed {
-  width: 60px;
-}
-
-/* === ENCABEZADO CON BOTÓN DE COLAPSO === */
-.sidebar__header {
+/* ═══ header ═══ */
+.sb__header {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  padding: 15px 18px;
-  border-bottom: 1px solid #eee;
+  gap: 12px;
+  padding: 18px 20px;
+  border-bottom: 2px solid var(--c-stroke);
 }
-
-.sidebar__header.collapsed {
-  justify-content: center;
+.sb__brand {
+  font-weight: 700;
+  color: var(--c-primary);
 }
-
-.sidebar__toggle-btn {
+.sb__btn {
+  margin-left: auto;
   background: none;
   border: none;
-  font-size: 20px;
-  color: #00cba9;
+  color: var(--c-primary);
+  font-size: 22px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s;
 }
-
-.sidebar__toggle-btn:hover {
+.sb__btn:hover {
   transform: scale(1.2);
 }
 
-/* === MENÚ DE OPCIONES === */
-.sidebar__menu {
-  padding: 10px 0;
-  flex-grow: 1;
+/* ═══ menú ═══ */
+.sb__menu {
+  flex: 1;
   overflow-y: auto;
-  margin-top: 40px;
+  padding: 20px 8px;
+}
+.sb__item {
+  list-style: none;
+  position: relative;
 }
 
-/* === OPCIONES PRINCIPALES Y CON SUBOPCIONES === */
-.sidebar__title,
-.sidebar__principal-link,
-.sidebar__link.subopcion {
-  padding: 16px 24px;
-  min-height: 52px;
+/* link genérico */
+.sb__link,
+.sb__sublink {
   display: flex;
   align-items: center;
-  position: relative;
-  border-radius: 8px;
-  cursor: pointer;
-  /* background: linear-gradient(to top, transparent 100%, #1976d2 0%); */
-  background-size: 100% 0%;
-  background-repeat: no-repeat;
-  transition: background-size 0.4s ease, color 0.3s ease;
-  color: #00cba9;
-  text-decoration: none;
+  gap: 14px;
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: #3a3a3a;
   font-weight: 500;
-}
-
-/* .sidebar__title:hover,
-.sidebar__principal-link:hover,
-.sidebar__link.subopcion:hover {
-  background-size: 100% 100%;
-  color: white;
-} */
-
-/* .sidebar__title:hover .sidebar__icon,
-.sidebar__principal-link:hover .sidebar__icon,
-.sidebar__link.subopcion:hover .sidebar__icon {
-  color: white;
-} */
-
-.sidebar__container.collapsed .sidebar__title,
-.sidebar__container.collapsed .sidebar__principal-link {
-  justify-content: center;
-}
-
-.sidebar__text {
   font-size: 15px;
-  color: #00cba9;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  /* transition: background 0.25s, color 0.25s, transform 0.25s; */
+  /* border: solid salmon 2px; */
+}
+.sb__ico {
+  font-size: 18px;
+  color: var(--c-primary);
+  transition: inherit;
+}
+.sb__chevron {
+  margin-left: auto;
+  font-size: 12px;
+  color: #777;
+  transition: transform 0.25s;
+}
+.is-open .sb__chevron {
+  transform: rotate(180deg);
 }
 
-.sidebar__container.collapsed .sidebar__text {
+/* estados */
+.sb__link:hover,
+.sb__sublink:hover {
+  background: rgba(0, 149, 203, 0.08);
+  transform: translateX(2px);
+}
+.is-active {
+  background: rgba(0, 203, 169, 0.15);
+}
+.sb--collapsed .sb__link span {
   display: none;
 }
 
-/* === ÍCONOS === */
-.sidebar__icon-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ═══ sub‑menú (modo expandido) ═══ */
+.sb__submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.sb__submenu.show {
+  max-height: 500px;
 }
 
-.sidebar__icon-wrapper::before {
-  content: '';
+/* ═══ sub‑menú (modo pop‑up cuando está colapsado) ═══ */
+/* .sb__submenu.pop {
   position: absolute;
-  width: 100%;
-  height: 0%;
-  bottom: 0;
-  left: 0;
-  /* background-color: #1976d2; */
-  transition: height 0.3s ease-in-out;
-  z-index: 0;
-  border-radius: 6px;
+  left: calc(var(--sb-w-mini) + 10px);
+  top: 0;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 10px;
+  min-width: 190px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-10px);
+  transition: opacity 0.25s, transform 0.25s;
 }
-
-.sidebar__container.collapsed .sidebar__icon-wrapper:hover::before {
-  height: 100%;
+.sb__submenu.pop.show {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
 }
-
-/* .sidebar__icon {
-  position: relative;
-  z-index: 1;
-  color: #1976d2;
-  font-size: 18px;
-  min-width: 24px;
-  margin-right: 10px;
-  text-align: center;
-  transition: color 0.3s ease;
-}
-
-.sidebar__container.collapsed .sidebar__icon {
-  margin-right: 0;
-}
-
-.sidebar__container.collapsed .sidebar__icon-wrapper:hover .sidebar__icon {
-  color: white;
+.sb--collapsed .sb__submenu.pop .sb__sublink span {
+  display: inline;
 } */
 
-/* === TOOLTIP === */
-.sidebar__tooltip {
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #9ca5ad;
-  color: rgb(255, 255, 255);
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 13px;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  z-index: 999;
-  margin-left: 8px;
-}
-
-.sidebar__container.collapsed .sidebar__icon-wrapper:hover .sidebar__tooltip {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* === ÍTEMS Y CONTENIDO === */
-.sidebar__item {
-  list-style: none;
-}
-
-.main__content {
-  margin-left: 250px;
-  transition: margin-left 0.3s ease;
-  padding: 20px;
-}
-
-.main__content.collapsed {
-  margin-left: 60px;
-}
-
-.sidebar__logo-final {
-  padding: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-/* 🎯 Hover general para títulos, links y subopciones */
-.sidebar__title:hover,
-.sidebar__principal-link:hover,
-.sidebar__link.subopcion:hover {
-  background-color: #e3f2fd;
-  transform: scale(1.05); /* animación como en navbar */
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.15);
-  color: #00cba9;
-}
-
-/* 🎯 Ícono dentro de cualquier opción cuando se hace hover */
-.sidebar__title:hover .sidebar__icon,
-.sidebar__principal-link:hover .sidebar__icon,
-.sidebar__link.subopcion:hover .sidebar__icon {
-  color: #00cba9;
-  transform: scale(1.2); /* le da vida al icono */
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-
-.sidebar__title,
-.sidebar__principal-link,
-.sidebar__link.subopcion {
-  gap: 10px; /* Puedes ajustar el valor según te convenga */
-}
-
-.subopcion{
-  font-size: 10px;
-  color: black;
-}
-
-.sidebar__brand{
-  font-size: 20px;
-  margin-right: 30px;
-  font-weight: 700;
-}
-
-
-/* Contenedor inferior */
-.sidebar__footer {
-  padding: 20px;
-  border-top: 1px solid #eee;
+/* ═══ footer ═══ */
+.sb__footer {
+  padding: 18px 20px;
+  border-top: 2px solid var(--c-stroke);
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 12px;
 }
-
-/* Contenedor del perfil */
-.sidebar__profile {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-around;
+.sb__avatar {
+  font-size: 28px;
+  color: var(--c-primary);
 }
-
-/* Ícono de usuario o avatar */
-.sidebar__avatar i {
-  font-size: 30px;
-  color: #00cba9;
-}
-
-/* Nombre del usuario */
-.sidebar__username {
+.sb__user {
   font-size: 14px;
-  color: #00cba9;
+  color: #333;
   font-weight: 500;
+}
+.sb--collapsed .sb__user {
+  display: none;
+}
+
+/* ═══ contenido principal ═══ */
+.main {
+  margin-left: var(--sb-w);
+  padding: 24px;
+  transition: margin-left 0.35s;
+}
+.main--collapsed {
+  margin-left: var(--sb-w-mini);
+}
+
+/* ═══ scrollbar minimal ═══ */
+.sb__menu::-webkit-scrollbar {
+  width: 6px;
+}
+.sb__menu::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+/* animación suave al expandir */
+.sb:not(.sb--collapsed) {
+  animation: scaleFade 0.3s ease;
+}
+@keyframes scaleFade {
+  from {
+    transform: scale(0.96);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ═══ pop‑over flotante cuando la sidebar está colapsada ═══ */
+
+
+/* título dentro del pop‑over */
+.sb__popover-title {
+  font-weight: 600;
+  color: var(--c-primary);
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+/* links dentro del pop‑over */
+.sb__popover .sb__sublink {
+  padding: 9px 14px;
+  gap: 12px;
+  font-size: 14px;
+}
+
+/* mostrar el pop‑over cuando se hace hover sobre el ítem */
+.sb--collapsed .sb__item:hover .sb__popover {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0); /* visible y posicionado bien */
+  pointer-events: auto;
 }

@@ -35,6 +35,7 @@ const FormularioRoles = () => {
                 console.error("Error en la respuesta del servidor:", result);
                 setError("email", { type: "server", message: "El correo electrónico invalido" });
             }
+            
             else {
                 emailjs.send('service_9oooaqk', 'template_7u6ca2t', {
                 passcode: result.codigo_verificacion,

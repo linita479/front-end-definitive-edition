@@ -18,8 +18,9 @@
     border-radius: 5px;
     outline: none;
     border: 1px solid #e0e0e0;
-    border-left: 4px solid #32cdd4;
-    background-color: #eeeeee;
+    border-left: 4px solid  hsl(197, 100%, 65%);;
+    padding-left: 10px;
+    background-color:#eeeeee;
     color: #1f1f1f;
     transition: all 0.3s ease;
     font-family: inherit;
@@ -30,7 +31,7 @@
   background-color: #eeeeee;
 }
 
-.comboBox-select:focus {
-  border-left: 4px solid#32cdd4;
-  background-color: #f0fbff;
+.input-wrapper__input-field:focus{
+    background-color: #f0fbff;
+    border-left-color:  hsl(197, 100%, 65%);
 }

@@ -9,6 +9,7 @@ const RegistroTh = () =>{
     const [errorBusqueda, setErrorBusqueda] = useState("");
     const { register , handleSubmit, watch, formState: { errors } } = useForm();
     const buscarUsuario = async (nrodoc)=>{
+        console.log(sessionStorage.getItem("token"))
         try{
             const response = await fetch(`http://127.0.0.1:8000/buscar_usuario/?nro_doc=${nrodoc}`,{
                 method: "GET",

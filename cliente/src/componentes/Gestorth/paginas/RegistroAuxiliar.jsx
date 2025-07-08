@@ -5,6 +5,7 @@ import ComboBox from "../componentes/ComboBox";
 import Botones from "../componentes/Botones";
 import { useForm } from "react-hook-form";
 import './Registroauxiliar.css'
+import Logo from "../../Homepage/componentes/Logo";
 import BusquedaDocumento from "../componentes/BusquedaDocumento";
 const RegistroAuxiliar = () =>{
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
@@ -55,8 +56,11 @@ const RegistroAuxiliar = () =>{
 
     return(
         <>
-        <div>
-            <h1 className="titulo-registro">Registro del auxiliar</h1>
+        <div className="josessasa">
+            <div className="cont-logo-flex-start">
+                <Logo/>
+            </div>
+            <div className="super-contenedor">
         <BusquedaDocumento
         register={register("nro_doc")}
         onClick={() => buscarUsuario(watch("nro_doc"))}
@@ -83,34 +87,34 @@ const RegistroAuxiliar = () =>{
                     { value: 'F', label: 'Femenino' }
                     ]} />
 
-                    <ComboBox label="Estado civil" register={register("datos_actualizar.estado_civil", { required: "campo obligatorio" })} options={[
-                    { value: '', label: 'Selecciona una opción' },
-                    { value: 'Soltero', label: 'Soltero' },
-                    { value: 'Casado', label: 'Casado' },
-                    { value: 'Divorciado', label: 'Divorciado' },
-                    { value: 'Viudo', label: 'Viudo' },
-                    { value: 'Union libre', label: 'Unión libre' },
-                    { value: 'Separado', label: 'Separado' }
-                    ]} />
-
-                    <ComboBox label="Tipo de contrato" register={register("datos_rol.tipo_contrato", { required: "campo obligatorio" })} options={[
-                    { value: '', label: 'Selecciona una opción' },
-                    { value: '1', label: 'A término indefinido' },
-                    { value: '2', label: 'A término fijo' },
-                    { value: '3', label: 'Por obra o labor' },
-                    { value: '4', label: 'Ocasional' },
-                    { value: '5', label: 'Contrato de aprendizaje' },
-                    { value: '6', label: 'Contrato de prestación de servicios' },
-                    { value: '7', label: 'Contrato sindical' }
-                    ]} />
-                </div>
-
-                <div className="botones-centro">
-                    <Botones name="Registrar" tipo="submit" />
-                </div>
+                            <ComboBox label="Estado civil" register={register("datos_actualizar.estado_civil", { required: "campo obligatorio" })} options={[
+                            { value: '', label: 'Selecciona una opción' },
+                            { value: 'Soltero', label: 'Soltero' },
+                            { value: 'Casado', label: 'Casado' },
+                            { value: 'Divorciado', label: 'Divorciado' },
+                            { value: 'Viudo', label: 'Viudo' },
+                            { value: 'Union libre', label: 'Unión libre' },
+                            { value: 'Separado', label: 'Separado' }
+                            ]} />
+                        </div>
+                        <div className="contenedor-etiqueta-form-medico-solito">
+                            <ComboBox label="Tipo de contrato" register={register("datos_rol.tipo_contrato", { required: "campo obligatorio" })} options={[
+                            { value: '', label: 'Selecciona una opción' },
+                            { value: '1', label: 'A término indefinido' },
+                            { value: '2', label: 'A término fijo' },
+                            { value: '3', label: 'Por obra o labor' },
+                            { value: '4', label: 'Ocasional' },
+                            { value: '5', label: 'Contrato de aprendizaje' },
+                            { value: '6', label: 'Contrato de prestación de servicios' },
+                            { value: '7', label: 'Contrato sindical' }
+                            ]} />
+                        </div>
+                    <div className="botones-centro-registro-auxiliar">
+                        <Botones name="Registrar" tipo="submit" />
+                    </div>
                 </form>
                 }
-            
+            </div>
         </div>
         </>
     );

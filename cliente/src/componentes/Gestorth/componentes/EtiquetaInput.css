@@ -19,7 +19,7 @@
   border-radius: 4px;
   outline: none;
   border: none;
-  border-left: 4px solid #00cba9; /* borde izquierdo aguamarina */
+  border-left: 4px solid  hsl(197, 100%, 65%); /* borde izquierdo aguamarina */
   padding-left: 12px;
   background-color:#eeeeee;
   color: #000000;
@@ -39,13 +39,13 @@
 
 .etiquetaInput-input:focus {
   background-color: #e6f7ff;
-  border-left: 4px solid#00cba9;
+  border-left: 4px solid hsl(197, 100%, 65%);
 }
 /* Para que los inputs tipo date también se vean igual */
 .etiquetaInput-input[type="date"] {
   color: #000;
   background-color:#eeeeee;
-  border-left: 4px solid #00cba9;
+  border-left: 4px solid  hsl(197, 100%, 65%);
   padding-left: 12px;
   height: 38px;
   border-radius: 4px;
@@ -68,7 +68,7 @@
   border-radius: 5px;
   outline: none;
   border: none;
-  border-left: 4px solid #32cdd4; /* Línea izquierda aguamarina */
+  border-left: 4px solid  hsl(197, 100%, 65%); /* Línea izquierda aguamarina */
   padding-left: 10px;
   background-color: #eeeeee;
   color: #1e1e1e;
@@ -85,14 +85,14 @@
 
 .input-formulario:focus {
   background-color: #e0f4ff;
-  border-left: 4px solid #32cdd4;
+  border-left: 4px solid  hsl(197, 100%, 65%);
 }
 
 /* 🎯 Input de archivo (file) personalizado */
 .input-file-formulario {
   padding: 10px;
   background-color: #eef6fd;
-  border-left: 4px solid #4cc2ff;
+  border-left: 4px solid  hsl(197, 100%, 65%);
   border-radius: 6px;
   font-family: 'Poppins', sans-serif;
   cursor: pointer;

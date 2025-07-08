@@ -13,45 +13,44 @@
   
 }
 
-.etiquetaInput-input {
-  width: 250px;
-  height: 38px;
-  border-radius: 4px;
-  outline: none;
-  border: none;
-  border-left: 4px solid #00cba9; /* borde izquierdo aguamarina */
-  padding-left: 12px;
-  background-color:#eeeeee;
-  color: #000000;
-  transition: all 0.3s ease;
-  font-size: 15px;
-  
-  
+.input-wrapper-etiqueta__input-field {
+    width: 400px;
+    height: 38px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    border-left: 4px solid  hsl(197, 100%, 65%);;
+    background-color:#eeeeee;
+    color: #000000;
+    transition: all 0.3s ease;
+    font-size: 15px;
+    padding: 10px;
 }
 
-.etiquetaInput-input::placeholder {
-  color: #a3a3a3;
+
+.input-wrapper-etiqueta__input-field::placeholder {
+    color: #a3a3a3;
 }
 
 .etiquetaInput-input:hover {
   background-color: #f0f8ff;
 }
 
-.etiquetaInput-input:focus {
-  background-color: #e6f7ff;
-  border-left: 4px solid#00cba9;
+.input-wrapper-etiqueta__input-field:focus {
+    background-color: #e6f7ff;
+    border-left-color:  hsl(197, 100%, 65%);
 }
-/* Para que los inputs tipo date también se vean igual */
-.etiquetaInput-input[type="date"] {
-  color: #000;
-  background-color:#eeeeee;
-  border-left: 4px solid #00cba9;
-  padding-left: 12px;
-  height: 38px;
-  border-radius: 4px;
-  appearance: none;
-  -webkit-appearance: none;
-  position: relative;
+
+
+.input-wrapper-etiqueta__input-field[type="date"] {
+    color: #000;
+    background-color:#eeeeee;
+    border-left: 4px solid  hsl(197, 100%, 65%);;
+    padding-left: 12px;
+    height: 38px;
+    border-radius: 4px;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 /* Cambia el color del ícono de calendario (solo Chrome/WebKit) */

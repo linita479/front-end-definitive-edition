@@ -22,7 +22,7 @@ const ModuloTh = () => {
     },
     {
         name: "Gestionar Personal",
-        path: "gestionar-personal",
+        path: "gestion_personal",
         icono: "fas fa-user-cog"
     },
     {
