@@ -1,0 +1,41 @@
+.advertencia-contrasena{
+    position: relative;
+    background: #fffbe6;
+    border-left: 5px solid #ffcc00;
+    padding: 16px 20px;
+    margin: 10px 0 20px 0;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #8a6d3b;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: 'Poppins', sans-serif;
+    width: 340px;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+/* Pico más grande y centrado */
+.advertencia-contrasena::before{
+    content: "";
+    position: absolute;
+    top: 50%; /* centro vertical */
+    transform: translateY(-50%);
+    left: -15px; /* más alejado para agrandarlo */
+    width: 0;
+    height: 0;
+    border-top: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+    border-right: 14px solid #ffcc00; /* color del pico */
+}
+
+
+
+.cont-form-error-contrasena{
+    /* border: solid black 2px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 20px;
+}

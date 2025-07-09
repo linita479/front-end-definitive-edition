@@ -3,6 +3,7 @@
   flex-direction: column;
   /* margin-bottom: 16px; */
   font-family: 'Poppins', sans-serif;
+  border: solid black 2px;
 }
 
 .etiquetaInput-label {

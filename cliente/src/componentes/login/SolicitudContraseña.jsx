@@ -3,7 +3,7 @@ import EtiquetaInput from "../objetos/EtiquetaInput";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Botones from "../objetos/Botones";
-import './Solicitudcontrasena.css'
+import './solicitudcontrasena.css'
 
 const SolicitudContraseña = () => {
     const navigate = useNavigate();
@@ -37,8 +37,10 @@ const SolicitudContraseña = () => {
 
     return (
         <div className="solicitud-contrasena">
-            <h1 className="titulo-solicitud-contrasena">Solicitud de Contraseña</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="form-olvido-contrasena">
+                <header className="form-olvido-contrasena-header">
+                    <h1 className="header-form-olvido-contrasena-titulo">Solicitud contraseña</h1>
+                </header>
                 <EtiquetaInput
                     label="Número de Documento"
                     type="number"

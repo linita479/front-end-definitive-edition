@@ -11,6 +11,8 @@ const Academico = () =>{
     const { register , handleSubmit, watch, formState: { errors } } = useForm();
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
     const [errorBusqueda, setErrorBusqueda] = useState("");
+    const [registroExitoso, setRegistroExitoso] = useState(false);
+
 
     const buscarUsuario = async (nrodoc)=>{
         try{
@@ -58,7 +60,7 @@ const Academico = () =>{
 
             const result = await response.json();
             if (response.ok) {
-            alert("✅ Registro académico exitoso");
+            setRegistroExitoso(true);
             console.log("Resultado:", result);
             } else {
             console.warn("Error en registro:", result);
@@ -96,6 +98,64 @@ const Academico = () =>{
                         </div>
                 </div>
                 </div>
+                {registroExitoso && (
+                    <div className="modal-registro-exitoso">
+                        <div className="header-modal-registro-exitoso">
+                        <div className="image image-exito">
+                            <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={2}
+                            stroke="currentColor"
+                            className="icono-exito"
+                            >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <div className="content-exito-hv">
+                            <span className="title-exito-texto">Registro exitoso</span>
+                            <p className="message-info-registro-exito">Los datos académicos se han guardado correctamente en el sistema. Puedes continuar con otros registros si lo deseas.</p>
+                        </div>
+                        <div className="barra-progreso"></div>
+                        <div className="actions">
+                            <button className="desactivate-exito" type="button" onClick={() => setRegistroExitoso(false)}>
+                            Cerrar
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+                    )}
+                {errorBusqueda && (
+                    <div className="card modal-usuario-no-encontrado">
+                        <div className="header-modal-usuario-no-encontrado">
+                        <div className="image">
+                            <svg
+                            aria-hidden="true"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            >
+                            <path
+                                d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"
+                                strokeLinejoin="round"
+                                strokeLinecap="round"
+                            ></path>
+                            </svg>
+                        </div>
+                        <div className="content-usuario-no-encontrado-hv">
+                            <span className="title-usuario-noencontrado-texto">{errorBusqueda}</span>
+                            <p className="message-info-usuario-no-encontrado">Lo sentimos, no hemos encontrado ningún usuario con ese número de documento. Por favor verifica que lo hayas digitado correctamente.</p>
+                        </div>
+                        <div className="actions">
+                            <button className="desactivate" type="button" onClick={() => setErrorBusqueda("")}>
+                            Cerrar
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+                    )}
                 <form action="" onSubmit={handleSubmit(onSubmit)} className="formulario-registro-academico">
                     <header className="header-form-personal-medico">
                         <h1 className="header-reGistro-medico-titulo">Registrar información academica</h1>

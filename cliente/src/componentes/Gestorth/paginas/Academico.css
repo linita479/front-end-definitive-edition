@@ -42,3 +42,237 @@
 .Documents-btn:hover .filePage{transform:translateY(-5px);}
 .Documents-btn:hover .fileFront{transform:rotateX(30deg);}
 .Documents-btn:active{transform:scale(.95);}
+
+
+/* ====== Modal Overlay para usuario no encontrado ====== */
+.modal-usuario-no-encontrado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ====== Modal Card (estructura interna) ====== */
+.modal-usuario-no-encontrado .card{
+  overflow: hidden;
+  background-color: #ffffff;
+  text-align: left;
+  border-radius: 0.5rem;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    width: 400px;
+    height: 500px;
+}
+
+/* ====== Header ====== */
+.header-modal-usuario-no-encontrado {
+    width: 500px;
+    height: 600px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: white;
+    border-right: #b91c1c solid 8px;
+}
+
+.content-usuario-no-encontrado-hv{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+/* ====== Icono (círculo rojo) ====== */
+.modal-usuario-no-encontrado .image {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fee2e2;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+}
+
+.modal-usuario-no-encontrado .image svg {
+  color: #dc2626;
+  width: 2rem;
+  height: 2rem;
+}
+
+.title-usuario-noencontrado-texto{
+    color: #dc2626;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+    
+}
+
+/* ====== Contenido (mensaje) ====== */
+.modal-usuario-no-encontrado .content {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.message-info-usuario-no-encontrado{
+  margin-top: 0.5rem;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+/* ====== Botón Cerrar ====== */
+.modal-usuario-no-encontrado .actions {
+  margin: 0.75rem 1rem;
+  background-color: #f9fafb;
+}
+
+.modal-usuario-no-encontrado .desactivate {
+  display: inline-flex;
+  padding: 0.5rem 1rem;
+  background-color: #dc2626;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  justify-content: center;
+  width: 300px;
+  border-radius: 0.375rem;
+  border: none;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+.modal-usuario-no-encontrado .desactivate:hover {
+  background-color: #b91c1c;
+}
+
+/* Evitar conflictos generales */
+.modal-usuario-no-encontrado button {
+  cursor: pointer;
+}
+
+
+
+
+.modal-registro-exitoso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-modal-registro-exitoso {
+  width: 500px;
+  height: 600px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  border-left: #059669 solid 8px; /* Verde más oscuro */
+}
+
+.image-exito {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #d1fae5; /* Verde clarito */
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+}
+
+.icono-exito {
+  color: #059669;
+  width: 2rem;
+  height: 2rem;
+}
+
+.content-exito-hv {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.title-exito-texto {
+  color: #059669;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+
+.message-info-registro-exito {
+  margin-top: 0.5rem;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+.barra-progreso {
+  width: 0;
+  height: 6px;
+  background-color: #10b981; /* Verde */
+  animation: expandirBarra 2s ease forwards;
+  border-radius: 4px;
+}
+
+@keyframes expandirBarra {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 90%;
+  }
+}
+
+.desactivate-exito {
+  display: inline-flex;
+  padding: 0.5rem 1rem;
+  background-color: #059669;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  justify-content: center;
+  width: 300px;
+  border-radius: 0.375rem;
+  border: none;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+.desactivate-exito:hover {
+  background-color: #047857;
+}
+

@@ -2,10 +2,10 @@
 
 /* ══════════════ variables ══════════════ */
 :root {
-  --sb-w:        250px;    /* ancho normal  */
-  --sb-w-mini:    64px;    /* ancho colapsado */
+  --sb-w:        250px;
+  --sb-w-mini:    64px;
   --c-primary:   hsl(197, 100%, 65%);
-  --c-bg:       rgba(255,255,255,.18);
+  --c-bg: #f1f1f1;
   --c-stroke:   hsl(197, 100%, 65%);
   --blur:        12px;
 }
@@ -19,7 +19,7 @@
   flex-direction: column;
   backdrop-filter: blur(var(--blur));
   background: var(--c-bg);
-  border-right: 2px solid var(--c-stroke);
+  border-right: 1px solid var(--c-stroke);
   transition: width 0.35s cubic-bezier(.4, 0, .2, 1);
   font-family: "Poppins", sans-serif;
 }
@@ -33,7 +33,7 @@
   align-items: center;
   gap: 12px;
   padding: 18px 20px;
-  border-bottom: 2px solid var(--c-stroke);
+  border-bottom: 1px solid var(--c-stroke);
 }
 .sb__brand {
   font-weight: 700;
@@ -78,8 +78,6 @@
   text-decoration: none;
   cursor: pointer;
   position: relative;
-  /* transition: background 0.25s, color 0.25s, transform 0.25s; */
-  /* border: solid salmon 2px; */
 }
 .sb__ico {
   font-size: 18px;
@@ -96,20 +94,45 @@
   transform: rotate(180deg);
 }
 
-/* estados */
+/* Hover */
 .sb__link:hover,
 .sb__sublink:hover {
-  background: rgba(0, 149, 203, 0.08);
-  transform: translateX(2px);
+  background-color: rgba(0, 149, 203, 0.08);
+  border-left: 4px solid var(--c-primary);
+  padding-left: 14px;
+  box-shadow: inset 0 0 4px rgba(0, 149, 203, 0.15);
+  transition: all 0.2s ease-in-out;
 }
+.sb__link:hover .sb__ico,
+.sb__sublink:hover .sb__ico {
+  color: var(--c-primary);
+}
+
+/* Activo */
+.sb__link.is-active,
+.sb__sublink.is-active {
+  background-color: rgba(0, 149, 203, 0.08);
+  border-left: 4px solid var(--c-primary);
+  padding-left: 14px;
+  box-shadow: inset 0 0 4px rgba(0, 149, 203, 0.15);
+  color: #3a3a3a;
+}
+.sb__link.is-active .sb__ico,
+.sb__sublink.is-active .sb__ico {
+  color: var(--c-primary);
+}
+
+/* esta clase fue eliminada porque causaba conflicto
 .is-active {
   background: rgba(0, 203, 169, 0.15);
 }
+*/
+
 .sb--collapsed .sb__link span {
   display: none;
 }
 
-/* ═══ sub‑menú (modo expandido) ═══ */
+/* sub‑menú */
 .sb__submenu {
   max-height: 0;
   overflow: hidden;
@@ -119,34 +142,10 @@
   max-height: 500px;
 }
 
-/* ═══ sub‑menú (modo pop‑up cuando está colapsado) ═══ */
-/* .sb__submenu.pop {
-  position: absolute;
-  left: calc(var(--sb-w-mini) + 10px);
-  top: 0;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  padding: 10px;
-  min-width: 190px;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(-10px);
-  transition: opacity 0.25s, transform 0.25s;
-}
-.sb__submenu.pop.show {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-}
-.sb--collapsed .sb__submenu.pop .sb__sublink span {
-  display: inline;
-} */
-
-/* ═══ footer ═══ */
+/* footer */
 .sb__footer {
   padding: 18px 20px;
-  border-top: 2px solid var(--c-stroke);
+  border-top: 1px solid var(--c-stroke);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -164,7 +163,7 @@
   display: none;
 }
 
-/* ═══ contenido principal ═══ */
+/* contenido principal */
 .main {
   margin-left: var(--sb-w);
   padding: 24px;
@@ -174,7 +173,7 @@
   margin-left: var(--sb-w-mini);
 }
 
-/* ═══ scrollbar minimal ═══ */
+/* scrollbar */
 .sb__menu::-webkit-scrollbar {
   width: 6px;
 }
@@ -183,7 +182,7 @@
   border-radius: 3px;
 }
 
-/* animación suave al expandir */
+/* animación */
 .sb:not(.sb--collapsed) {
   animation: scaleFade 0.3s ease;
 }
@@ -198,27 +197,34 @@
   }
 }
 
-/* ═══ pop‑over flotante cuando la sidebar está colapsada ═══ */
-
-
-/* título dentro del pop‑over */
+/* popover */
 .sb__popover-title {
   font-weight: 600;
   color: var(--c-primary);
   margin-bottom: 8px;
   padding-left: 4px;
 }
-
-/* links dentro del pop‑over */
 .sb__popover .sb__sublink {
   padding: 9px 14px;
   gap: 12px;
   font-size: 14px;
 }
-
-/* mostrar el pop‑over cuando se hace hover sobre el ítem */
 .sb--collapsed .sb__item:hover .sb__popover {
   opacity: 1;
-  transform: translateY(-50%) translateX(0); /* visible y posicionado bien */
+  transform: translateY(-50%) translateX(0);
   pointer-events: auto;
 }
+.sb__link[aria-current="page"] {
+  background-color: rgba(0, 149, 203, 0.08);
+  border-left: 4px solid var(--c-primary);
+}
+
+.sb__sublink {
+  font-size: 13px; /* texto más pequeño */
+  padding-left: 36px; /* opcional: para dar más indentación visual */
+}
+
+.sb__sublink .sb__ico {
+  font-size: 14px; /* ícono más pequeño */
+}
+

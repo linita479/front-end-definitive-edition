@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
 .comboBox-container {
   display: flex;
   flex-direction: column;
   /* margin-bottom: 16px; */
   font-family: 'Poppins', sans-serif;
   gap: 15px;
+  /* border: solid greenyellow 2px; */
+  width: 350px;
+  height: 85px;
 }
 
 .comboBox-label {
@@ -12,8 +18,27 @@
   /* margin-bottom: 6px; */
 }
 
-.comboBox-select {
-    width: 300px;
+.comboBox-select-objetos{
+    width: 350px;
+    height: 45px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid  hsl(197, 100%, 65%);
+    padding-left: 10px;
+    background-color:#eeeeee;
+    color: #1f1f1f;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    padding-left: 10px;
+}
+
+.comboBox-select-objetos:hover{
+  background-color: #eeeeee;
+}
+
+/* .comboBox-select {
+    width: 350px;
     height: 35px;
     border-radius: 5px;
     outline: none;
@@ -25,11 +50,11 @@
     transition: all 0.3s ease;
     font-family: inherit;
     padding-left: 10px;
-}
+} */
 
-.comboBox-select:hover {
+/* .comboBox-select:hover {
   background-color: #eeeeee;
-}
+} */
 
 .input-wrapper__input-field:focus{
     background-color: #f0fbff;

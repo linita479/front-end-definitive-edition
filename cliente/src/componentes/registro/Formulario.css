@@ -11,23 +11,42 @@
     padding-top: 150px;
 }
 
-.fromulariol{
+.fromulariol {
     width: 1050px;
-    height: 750px;
-    /* border: salmon solid 2px; */
+    height: auto;
+    border-radius: 20px;
+    background: #fff; /* blanco limpio */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* sombra suave */
+    border: 1px solid #e3e3e3;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    border-bottom: 5px solid rgb(51, 193, 215);
+}
+
+.fromulariol:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    transform: translateY(-4px);
+}
+
+
+.header-form-registro-pacientel{
+    width: 100%;
+    height: 80px;
+    justify-content: center;
     display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
+    margin-bottom: 20px;
+    background-color: hsl(197, 100%, 65%);
+    color: white;
+    border-radius: 5px;
 }
 
 .input-wrapper{
-    width: 300px;
+    width: 350px;
     height: 85px;
     /* border: solid blueviolet 2px; */
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     /* border: solid black 2px; */
     /* justify-content: center;
     align-items: center; */
@@ -66,7 +85,7 @@
 
 .tlt-from-paciente{
     font-family: 'Poppins', sans-serif;
-    font-size: 26px;
+    font-size: 50px;
     font-weight: 600;
 }
 
@@ -82,6 +101,46 @@
 
 .header-formulario-paciente-registro{
     width: 100%;
-    height: 50px;
+    height: 80px;
     border: #32A89C solid 2px;
+}
+
+.cont-bototn-form-paciente{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modulo-registros{
+    width: 100%;
+    height: 100vh;
+}
+
+.cont-logo-form-paciente{
+    width: 100%;
+    height: 100px;
+    margin-top: 150px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 50px;
+}
+
+.icono-header-form {
+    margin-right: 10px;
+    width: 28px;
+    height: 28px;
+    stroke: #2c3e50; /* Puedes cambiar el color a tu preferencia */
+    vertical-align: middle;
+}
+
+.contenedor-etiqueta-for-rol{
+    width: 350px;
+    height: 85px;
+    /* border: solid blueviolet 2px; */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* border: solid black 2px; */
+    /* justify-content: center;
+    align-items: center; */
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import "./Sidebar.css";
 
 const NavBar = ({ listOpcions = [] }) => {
@@ -21,75 +21,74 @@ const NavBar = ({ listOpcions = [] }) => {
         <aside className={`sb ${collapsed ? "sb--collapsed" : ""}`}>
             {/* header */}
             <header className="sb__header">
-            {!collapsed && <span className="sb__brand">Kenayhealthsoft</span>}
-            <button className="sb__btn" onClick={toggleSidebar}>
-                <i className="fas fa-bars" />
-            </button>
+                {!collapsed && <span className="sb__brand">Kenayhealthsoft</span>}
+                <button className="sb__btn" onClick={toggleSidebar}>
+                    <i className="fas fa-bars" />
+                </button>
             </header>
 
             {/* menú */}
             <nav className="sb__menu">
-            {listOpcions.map(op => (
-                <div
-                className="sb__item"
-                key={op.name}
-                onMouseEnter={() => onEnter(op.name)}
-                onMouseLeave={onLeave}
-                >
-                {op.subOpciones ? (
-                    <>
-                    {/* CAMBIO: de button a div */}
+                {listOpcions.map(op => (
                     <div
-                        role="button"
-                        tabIndex={0}
-                        className={`sb__link ${pathname.includes(op.path) ? "is-active" : ""}`}
-                        onClick={() => !collapsed && toggleClick(op.name)}
-                        onKeyDown={(e) => {
-                            if (e.key === "Enter") toggleClick(op.name);
-                        }}
+                        className="sb__item"
+                        key={op.name}
+                        onMouseEnter={() => onEnter(op.name)}
+                        onMouseLeave={onLeave}
                     >
-                        <i className={`${op.icono || "fas fa-folder"} sb__ico`} />
-                        {!collapsed && <span>{op.name}</span>}
-                        {!collapsed && (
-                        <i
-                            className={`fas fa-chevron-${open[op.name] ? "up" : "down"} sb__chevron`}
-                        />
+                        {op.subOpciones ? (
+                            <>
+                                <div
+                                    role="button"
+                                    tabIndex={0}
+                                    className={`sb__link ${pathname.includes(op.path) ? "is-active" : ""}`}
+                                    onClick={() => !collapsed && toggleClick(op.name)}
+                                    onKeyDown={(e) => {
+                                        if (e.key === "Enter") toggleClick(op.name);
+                                    }}
+                                >
+                                    <i className={`${op.icono || "fas fa-folder"} sb__ico`} />
+                                    {!collapsed && <span>{op.name}</span>}
+                                    {!collapsed && (
+                                        <i className={`fas fa-chevron-${open[op.name] ? "up" : "down"} sb__chevron`} />
+                                    )}
+                                </div>
+
+                                <div className={`sb__submenu ${open[op.name] ? "show" : ""}`}>
+                                    {op.subOpciones.map(sub => (
+                                        <NavLink
+                                            to={sub.path}
+                                            key={sub.name}
+                                            className={({ isActive }) =>
+                                                `sb__sublink${isActive ? " is-active" : ""}`
+                                            }
+                                        >
+                                            <i className={`${sub.icono || "fas fa-circle"} sb__ico`} />
+                                            <span>{sub.name}</span>
+                                        </NavLink>
+                                    ))}
+                                </div>
+                            </>
+                        ) : (
+                            <NavLink
+                                to={op.path}
+                                end={false}
+                                className={({ isActive }) =>
+                                    `sb__link${isActive ? " is-active" : ""}`
+                                }
+                            >
+                                <i className={`${op.icono || "fas fa-file"} sb__ico`} />
+                                {!collapsed && <span>{op.name}</span>}
+                            </NavLink>
                         )}
                     </div>
-
-                    {/* submenú expandido */}
-                    <div className={`sb__submenu ${open[op.name] ? "show" : ""}`}>
-                        {op.subOpciones.map(sub => (
-                        <Link
-                            to={sub.path}
-                            key={sub.name}
-                            className={`sb__sublink ${pathname === sub.path ? "is-active" : ""}`}
-                        >
-                            <i className={`${sub.icono || "fas fa-circle"} sb__ico`} />
-                            <span>{sub.name}</span>
-                        </Link>
-                        ))}
-                    </div>
-                    </>
-                ) : (
-                    <>
-                    <Link
-                        to={op.path}
-                        className={`sb__link ${pathname === op.path ? "is-active" : ""}`}
-                    >
-                        <i className={`${op.icono || "fas fa-file"} sb__ico`} />
-                        {!collapsed && <span>{op.name}</span>}
-                    </Link>
-                    </>
-                )}
-                </div>
-            ))}
+                ))}
             </nav>
 
             {/* footer */}
             <footer className="sb__footer">
-            <i className="fas fa-user-circle sb__avatar" />
-            {!collapsed && <span className="sb__user">Juan Pérez</span>}
+                <i className="fas fa-user-circle sb__avatar" />
+                {!collapsed && <span className="sb__user">Juan Pérez</span>}
             </footer>
         </aside>
 
@@ -101,6 +100,7 @@ const NavBar = ({ listOpcions = [] }) => {
 };
 
 export default NavBar;
+
 
 
 

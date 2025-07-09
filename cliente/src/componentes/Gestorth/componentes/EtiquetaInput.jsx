@@ -20,7 +20,7 @@ const EtiquetaInput = (props) => {
                 type={props.type}
                 placeholder={props.placeholder}
                 {...props.register}
-                className="input-formulario"
+                className="input-formulario-objetos"
                 />
             )}
         </div>

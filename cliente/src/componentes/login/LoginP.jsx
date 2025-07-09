@@ -90,7 +90,7 @@ const LoginP = () => {
           </div>
             <button className='btn'>Ingresar</button>
             <Link to="/solicitud_contrasena" className='link olvidopss'>¿Olvidaste tu contraseña?</Link>
-            <Link to="/registro" className='link'>¿No tienes cuenta? Regístrate aquí</Link>
+            <Link to="/registro" className='link'>¿No tienes cuenta? <span className='span-registrate-aqui'>Regístrate aquí</span></Link>
         </form>
         </div>
         </>

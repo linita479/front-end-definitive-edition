@@ -1,4 +1,3 @@
-// RegistrarMedico.jsx
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import ComboBox      from "../componentes/ComboBox";
@@ -80,7 +79,7 @@ const RegistrarMedico = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Token 1181dcf7acc8fb31423bcaaaaf903dbd4e04cde5`,
+          Authorization: `Token ${sessionStorage.getItem("token")}`,
         },
         body: JSON.stringify(dataHV),
       });
@@ -120,7 +119,6 @@ const RegistrarMedico = () => {
         <div className="contenedor-busqueda">
           <div className="fondo-blanco">
             <p className="texto-busqueda">Buscar por número de documento</p>
-
             <div className="searchBox">
               <input
                 className="searchInput"
@@ -138,6 +136,9 @@ const RegistrarMedico = () => {
                 </svg>
               </button>
             </div>
+                <div className="aviso-registro-usuario">
+      ⚠️ Este formulario permite registrar a un usuario ya existente como personal médico. Asegúrate de haberlo buscado correctamente antes de continuar.
+    </div>
 
             {errorBusqueda && <p className="mensaje-error">{errorBusqueda}</p>}
           </div>

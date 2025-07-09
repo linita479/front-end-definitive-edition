@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import ListaAcademicos from "./ListaAcademicos";
+import './CardPersonal.css'
 
 const CardPersonal = ({datos, onClose}) =>{
     const [mostrarAcademicos, setMostrarAcademicos] = useState(false);

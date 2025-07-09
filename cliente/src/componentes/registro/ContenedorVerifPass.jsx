@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import EtiquetaInput from "../objetos/EtiquetaInput";
 import Botones from "../objetos/Botones";
 import ContenedorChPass from "./ContenedorChPass";
+import '../objetos/EtiquetaInput.css'
+import './contenedorcontrasena.css'
 const ContenedorVerifPass = () => {
     const { register, handleSubmit, setError,formState: { errors } } = useForm();
     const [token, setToken] = useState("");
@@ -38,8 +40,10 @@ const ContenedorVerifPass = () => {
     };
     return (
         <div className="solicitud-contrasena">
-            <h1>Solicitud de Contraseña</h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} className="recuperar-contrasena-form">
+                <header className="header-verificar-contrasena">
+                    <h1 className="titulo-header-solicitud-contrasena">Solicitud contraseña</h1>
+                </header>
                 <EtiquetaInput
                     label="Codigo de Verificación"
                     type="text"

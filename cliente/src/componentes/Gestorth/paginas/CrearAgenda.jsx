@@ -6,6 +6,7 @@ import CalendarioSeleccion from "./CalendarioAgenda";
 import EtiquetaInput from "../componentes/EtiquetaInput";
 import ComboBox from "../componentes/ComboBox";
 import Botones from "../componentes/Botones";
+import './CrearAgenda.css'
 
 const CrearAgenda = () => {
       const [mostrarFormulario, setMostrarFormulario] = useState(false);
@@ -127,53 +128,107 @@ const CrearAgenda = () => {
         }, []);
   return (
     <div className="crear-agenda">
-      <h1 className="titulo-registro">Registro del auxiliar</h1>
       <BusquedaDocumento
         register={register("nro_doc")}
         onClick={() => buscarUsuario(watch("nro_doc"))}
       />
+      <div className="contenedor-calendario-datos-personal"></div>
       {mostrarFormulario && <>
-      <div className="info-usuario-agenda">
-        <h3 className="titulo-info">👤 Información del profesional</h3>
-        <p><strong>Nombre:</strong> {`${medico.first_name} ${medico.last_name}`}</p>
-        <p><strong>Tipo de documento:</strong> {medico.tipo_doc}</p>
-        <p><strong>N° Documento:</strong> {medico.nro_doc}</p>
-        <p><strong>Email:</strong> {medico.email || "No disponible"}</p>
-      </div>
-
-        <CalendarioSeleccion onChangeDias={(dias) => {setMes(dias.mes);setDia(dias.dias)}}/>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="contenedor-inputs-doble-rol">
-        
-
-        <EtiquetaInput
-          label="Hora inicio"
-          type="time"
-          register={register("agenda_dia.horainico", {
-            required: "La hora de inicio es obligatoria",
-          })}
+      <div className="contenedor-tarjetprofecional-calendario">
+      <div className="card-profesional-notificacion">
+      <svg
+        className="icono-doctor-profesional"
+        width="80"
+        height="80"
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="32" cy="20" r="12" stroke="#00b4d8" strokeWidth="3" />
+        <path
+          d="M12 54V46C12 38.82 22 34 32 34C42 34 52 38.82 52 46V54"
+          stroke="#90e0ef"
+          strokeWidth="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
+        <path
+          d="M24 50L28 42"
+          stroke="#00b4d8"
+          strokeWidth="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M40 50L36 42"
+          stroke="#00b4d8"
+          strokeWidth="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+
+        <p className="titulo-profesional-notif">Información del profesional</p>
+        <p className="dato-profesional"><strong>Nombre:</strong> {`${medico.first_name} ${medico.last_name}`}</p>
+        <p className="dato-profesional"><strong>Tipo de documento:</strong> {medico.tipo_doc}</p>
+        <p className="dato-profesional"><strong>N° Documento:</strong> {medico.nro_doc}</p>
+        <p className="dato-profesional"><strong>Email:</strong> {medico.email || "No disponible"}</p>
       </div>
 
-      <div className="contenedor-inputs-doble-rol">
-        <EtiquetaInput
+          <div className="cont-calendar">
+              <CalendarioSeleccion onChangeDias={(dias) => {setMes(dias.mes);setDia(dias.dias)}}/>
+          </div>
+      </div>
+
+          <form onSubmit={handleSubmit(onSubmit)} className="form-crear-agenda">
+            <header className="header-crear-agenda">
+              <h1 className="header-crear-agenda-titulo">Crear agenda</h1>
+            </header>
+            <EtiquetaInput
+            label="Hora inicio"
+            type="time"
+            register={register("agenda_dia.horainico", {
+              required: "La hora de inicio es obligatoria",
+            })}
+          />
+          <EtiquetaInput
           label="Hora fin"
           type="time"
           register={register("agenda_dia.horafin", {
             required: "La hora de fin es obligatoria",
           })}
         />
-
         <EtiquetaInput
           label="Hora de almuerzo"
           type="time"
           register={register("agenda_dia.horaalmuerzo")}
         />
-      </div>
-      <Botones name="Crear agenda" tipo="submit" />
-          </form>
-        
-          
+      <button type="submit" className="btn-crear-agenda-medico">
+        <span className="fold"></span>
+
+        <div className="points_wrapper">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <i key={i} className="point"></i>
+          ))}
+        </div>
+
+        <span className="inner">
+          <svg
+            className="icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2.5"
+          >
+            <polyline points="13.18 1.37 13.18 9.64 21.45 9.64 10.82 22.63 10.82 14.36 2.55 14.36 13.18 1.37" />
+          </svg>
+          Crear agenda
+        </span>
+      </button>
+    </form>
       </>}
       
     </div>

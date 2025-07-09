@@ -61,7 +61,9 @@ const FormularioRoles = () => {
             Por favor, revisa tu bandeja de entrada y sigue las instrucciones para completar el proceso.
         </Mensaje>
         <div className="form-contenedor__registro_rol">
-            <Logo />
+                <div className='form-cont-logo-registro-p'>
+                    <Logo />
+                </div>
             {/* <div className="cont-tlt-form-rol">
                 <h1 className='tlt-from-paciente'>Formulario de Registro</h1>
             </div> */}
@@ -86,7 +88,7 @@ const FormularioRoles = () => {
                         />
                         {errors.nro_doc && <span className='error'>{errors.nro_doc.message}</span>}
                     </div>
-                    <div className="contenedor-etiqueta-for-rol">
+                    <div className="contenedor-etiqueta-for-rol-select">
                         <label htmlFor="" className="input-wrapper-etiqueta__input-label">Tipo de documento</label>
                         <select
                             className="input-wrapper__input-field"

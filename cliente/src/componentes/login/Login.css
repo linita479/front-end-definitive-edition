@@ -147,17 +147,26 @@ a:hover{
     width: 768px;
     max-width: 100%;
     min-height: 500px;
+    /* border: solid black 3px; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* padding: 100px; */
+    padding-bottom: 150px;
+    margin-bottom: 200px;
 }
 .form-contenedor1{
     position: absolute;
     width: 380px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     /* border: salmon 3px solid; */
     top: 0;
     height: 100%;
     transition: all 0.6s ease-in-out;
     font-family: 'Poppins', sans-serif;
+    display: flex;
 }
+
 .login-contenedor{
     left: 0;
     width: 50%;
@@ -215,22 +224,32 @@ a:hover{
     transform: translateX(0);
     transition: transform 0.6s ease-in-out;
     font-family: 'Poppins', sans-serif;
+    display: flex;
+}
+
+.overlay::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35); /* negro translúcido */
 
 }
 
-.overlay::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: linear-gradient(
-        to top,
-        rgba(46, 94, 109, 0.4) 40%,
-        rgba(46, 94, 109, 0)
-    );
-}
+/* .overlay::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+} */
+
 .container.right-panel-active .overlay{
     transform: translateX(50%);
 }
@@ -307,7 +326,7 @@ a:hover{
     /* border: solid blueviolet 2px; */
     flex-direction: column;
     gap: 50px;
-    /* border: solid black 2px; */
+    
 }
 .titulologin{
     font-family: 'Poppins', sans-serif;
@@ -339,7 +358,12 @@ a:hover{
 .link{
     font-size: 13px;
     margin-bottom: 10px;
-    color:  hsl(197, 96%, 50%);
+    /* color:  hsl(197, 96%, 50%); */
+    color: black;
+}
+.span-registrate-aqui{
+    color: hsl(197, 96%, 50%);
+    font-weight: 500;
 }
 .olvidopss{
     margin-top: 10px;
@@ -370,4 +394,20 @@ a:hover{
     justify-content: center;
     align-items: flex-start;
     padding-left: 50px;
+    /* border: solid black 2px; */
+    padding-top: 20px;
+}
+
+.overlay-left{
+    /* border: solid black 2px; */
+    gap: 20px;
+}
+
+.overlay-right{
+    /* border: solid black 2px; */
+    gap: 20px;
+}
+
+.prrf-overlay-registro-personal{
+    line-height: 1.4;
 }

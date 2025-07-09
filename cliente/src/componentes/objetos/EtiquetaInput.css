@@ -1,30 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
 .etiquetaInput-contenedor {
   display: flex;
   flex-direction: column;
   /* margin-bottom: 16px; */
   font-family: 'Poppins', sans-serif;
 }
+.input-wrapper{
+    font-family: 'Poppins', sans-serif;
+}
+
 
 .etiquetaInput-label {
   font-size: 14px;
   color: #1b1b1b;
   /* margin-bottom: 6px; */
   font-weight: 600;
+  font-family: 'Poppins', sans-serif;
   
 }
 
 .input-wrapper-etiqueta__input-field {
-    width: 400px;
+    width: 450px;
     height: 38px;
     border-radius: 4px;
     outline: none;
     border: none;
-    border-left: 4px solid  hsl(197, 100%, 65%);;
+    border-left: 4px solid  hsl(197, 100%, 65%);
     background-color:#eeeeee;
     color: #000000;
     transition: all 0.3s ease;
     font-size: 15px;
     padding: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -61,13 +70,36 @@
 
 
 /* Estilo para inputs comunes */
-.input-formulario {
-  width: 100%;
-  height: 35px;
+.input-formulario-objetos{
+  width: 350px;
+  height: 45px;
   border-radius: 5px;
   outline: none;
   border: none;
   border-left: 4px solid #32cdd4; /* Línea izquierda aguamarina */
+  padding-left: 10px;
+  background-color: #eeeeee;
+  color: #1e1e1e;
+  transition: all 0.3s ease;
+}
+.input-formulario-objetos::placeholder {
+  color: #888;
+}
+.input-formulario-objetos:hover {
+  background-color: #eef6fd;
+}
+.input-formulario-objetos:focus {
+  background-color: #e0f4ff;
+  border-left: 4px solid #32cdd4;
+}
+
+/* .input-formulario {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  border-left: 4px solid #32cdd4;
   padding-left: 10px;
   background-color: #eeeeee;
   color: #1e1e1e;
@@ -85,7 +117,7 @@
 .input-formulario:focus {
   background-color: #e0f4ff;
   border-left: 4px solid #32cdd4;
-}
+} */
 
 /* 🎯 Input de archivo (file) personalizado */
 .input-file-formulario {

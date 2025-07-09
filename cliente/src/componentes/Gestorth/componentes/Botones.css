@@ -3,11 +3,11 @@
   width: 6.5em;
   height: 2.3em;
   margin: 0.5em;
-  background:  hsl(197, 100%, 50%); /* Verde a aguamarina */
+  background:  hsl(197, 97%, 42%); /* Verde a aguamarina */
   color: white;
   border: none;
   border-radius: 0.625em;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   position: relative;

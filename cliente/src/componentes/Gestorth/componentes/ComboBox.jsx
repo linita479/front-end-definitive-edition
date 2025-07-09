@@ -5,7 +5,7 @@ const ComboBox = (props) => {
     return (
         <div className="comboBox-container">
         <label className="comboBox-label">{props.label}</label>
-        <select className="comboBox-select" {...props.register}>
+        <select className="comboBox-select-objetos" {...props.register}>
             {props.options.map((option, index) => (
             <option key={index} value={option.value}>
                 {option.label}

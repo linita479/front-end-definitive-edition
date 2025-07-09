@@ -21,7 +21,7 @@
 }
 
 .kenay-tlt-logo{
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   font-family: 'Poppins', sans-serif;
   color: hsl(197, 100%, 65%);
@@ -77,8 +77,8 @@
 }
 
 .icon-container__cube-icon {
-  width: 40px;
-  height: 40px; /* Más grande */
+  width: 30px;
+  height: 30px; /* Más grande */
 }
 
 .cube-container__cube-top {

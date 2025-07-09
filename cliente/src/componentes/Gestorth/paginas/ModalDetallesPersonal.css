@@ -1,31 +1,179 @@
-.modal-overlay {
+.detallesPersonal__overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
-.modal-contenido {
-  background: #fff;
-  padding: 20px 30px;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 500px;
-  box-shadow: 0 0 10px #333;
+.detallesPersonal__card {
+  width: 700px;
+  height: auto;
+  max-height: 90vh;
+  background: #f5f5f5;
+  border-radius: 20px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px #4445;
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.modal-cerrar-btn {
-  margin-top: 20px;
-  background: #3b82f6;
-  color: white;
+.detallesPersonal__icono,
+.detallesPersonal__titulo,
+.detallesPersonal__contenido {
+  position: relative;
+  z-index: 5;
+  transition: all 0.5s;
+}
+
+.detallesPersonal__icono {
+  display: flex;
+  justify-content: center;
+  margin-top: -20px;
+}
+
+.detallesPersonal__titulo {
+  font-size: 26px;
+  font-weight: 800;
+  text-align: center;
+  margin-top: -10px;
+}
+
+.detallesPersonal__contenido {
+  font-size: 16px;
+  max-height: 50vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.detallesPersonal__contenido p {
+  margin-bottom: 8px;
+}
+
+.detallesPersonal__burbuja {
+  position: absolute;
+  top: -150px;     
+  right: -150px;        
+  width: 300px;         
+  height: 300px;     
+  background: #60a5fa;
+  border-radius: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detallesPersonal__numero {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.detallesPersonal__burbuja::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background: #60a5fa;
+  position: absolute;
+  border-radius: 100%;
+  top: 50%;
+  right: 50%;
+  transition: all 0.5s;
+  transform: translateX(50%) translateY(-50%);
+  z-index: -1;
+}
+
+.detallesPersonal__card:hover .detallesPersonal__burbuja::after {
+  width: 900px;
+  height: 900px;
+}
+
+.detallesPersonal__card:hover .detallesPersonal__icono,
+.detallesPersonal__card:hover .detallesPersonal__titulo,
+.detallesPersonal__card:hover .detallesPersonal__contenido {
+  color: #000000;
+  fill: #000000;
+}
+
+/* Botón Estilizado */
+.detallesPersonal__botonCerrar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 12px 20px;
+  background-color: #212121;
   border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
+  color: #e8e8e8;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
   cursor: pointer;
+  overflow: hidden;
+  z-index: 10;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  width: 200px;
+  height: 50px;
+}
+
+.detallesPersonal__botonCerrar span {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+
+.detallesPersonal__botonCerrar::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  translate: 0 105%;
+  background-color: #F53844;
+  transition: all 0.3s ease;
+}
+
+.detallesPersonal__botonCerrar svg {
+  width: 24px;
+  height: 24px;
+  fill: #F53844;
+  transition: all 0.3s ease;
+}
+
+.detallesPersonal__botonCerrar:hover {
+  animation: shake 0.2s linear 1;
+}
+
+.detallesPersonal__botonCerrar:hover::before {
+  translate: 0 0;
+}
+
+.detallesPersonal__botonCerrar:hover svg {
+  fill: #e8e8e8;
+}
+
+@keyframes shake {
+  0% { rotate: 0deg; }
+  33% { rotate: 10deg; }
+  66% { rotate: -10deg; }
+  100% { rotate: 10deg; }
+}
+
+.strong-detalles-personla{
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #0CABA8;
 }
