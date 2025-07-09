@@ -1,0 +1,45 @@
+.datos-paciente {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+}
+
+.datos-paciente h2 {
+  width: 100%;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e2e2e2;
+  padding-bottom: 0.5rem;
+  color: #2563eb;
+}
+
+.columna-formulario {
+  flex: 1 1 300px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 1.2rem;
+  border-radius: 8px;
+}
+
+.columna-formulario h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #111827;
+  border-left: 4px solid #3b82f6;
+  padding-left: 0.5rem;
+}
+
+.columna-formulario p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+.columna-formulario strong {
+  color: #1f2937;
+}

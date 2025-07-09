@@ -14,7 +14,7 @@ const ModuloCitas = () => {
             name: "Pacientes",
             subOpciones: [
                 { name: "Crear Paciente", path: "crear-paciente" },
-                { name: "Consultar Paciente", path: "consultar-paciente" }
+                { name: "Consultar Paciente", path: "paciente" }
             ]
         }
     ];

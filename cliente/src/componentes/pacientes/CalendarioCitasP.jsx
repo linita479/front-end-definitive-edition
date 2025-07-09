@@ -1,9 +1,9 @@
 import React, { useState ,useEffect } from "react";
-import Card_cita from "./Card_cita";
-import Calendario_horas from "./Calendario_horas";
+import Card_citaP from "./Card_citaP";
+import Calendario_horasP from "./Calendario_horasP";
 import "./calendario_citas.css";
 
-const CalendarioCitas = () => {
+const CalendarioCitasP = () => {
   const [index, setIndex] = useState(0);
   const [open, setOpen] = useState(false);
   const [dia, setDia] = useState(null);
@@ -249,7 +249,7 @@ const CalendarioCitas = () => {
             }`;
 
             return (
-              <Card_cita
+              <Card_citaP
                 key={key}
                 dia={diaNumerico}
                 citasCount={citasPorDia[diaCard.toISOString().split("T")[0]] || 0}
@@ -262,9 +262,9 @@ const CalendarioCitas = () => {
         </div>
       </div>
 
-      <Calendario_horas isOpenCH={open} isCloseCH={handleClose} dia={dia} />
+      <Calendario_horasP isOpenCH={open} isCloseCH={handleClose} dia={dia} />
     </>
   );
 };
 
-export default CalendarioCitas;
+export default CalendarioCitasP;

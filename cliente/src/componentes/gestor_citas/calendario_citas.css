@@ -1,0 +1,151 @@
+.calendario {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.calendario__titulo {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.calendario__mes-navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendario__btn-mes {
+  background: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.calendario__btn-mes:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.calendario__mes-actual {
+  font-size: 1.5rem;
+  color: #222;
+}
+
+.calendario__cabecera-semana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+  color: #444;
+}
+
+.calendario__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-top: 0.5rem;
+}
+
+.calendario__dia {
+  background: #f1f1f1;
+  border-radius: 6px;
+  padding: 0.8rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #222;
+  transition: 0.2s;
+}
+
+.calendario__dia:hover {
+  background: #d0e4ff;
+}
+
+.calendario__dia--activo {
+  cursor: pointer;
+}
+
+.calendario__dia--pasado {
+  background: #eee;
+  color: #999;
+  pointer-events: none;
+}
+
+.calendario__dia--relleno {
+  background: transparent;
+}
+
+
+.busqueda-medico {
+  position: relative; /* ¡Esto es crucial! */
+  max-width: 400px;
+  margin: 1rem auto;
+}
+
+
+.busqueda-medico__input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+.busqueda-medico__lista {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+  max-height: 180px;
+  overflow-y: auto;
+  z-index: 10;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.busqueda-medico__lista li {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.busqueda-medico__lista li:hover {
+  background-color: #f1f1f1;
+}
+.medico-seleccionado-banner {
+  margin-top: 0.5rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid #00b894;
+  border-radius: 8px;
+  background-color: #eafff3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.btn-limpiar-medico {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.calendario__dia--bloqueado {
+  background-color: #f8f8f8;
+  color: #ccc;
+  pointer-events: none;
+  opacity: 0.6;
+  border: 1px dashed #ddd;
+}

@@ -4,9 +4,9 @@ import EtiquetaInput from "../objetos/EtiquetaInput";
 import ComboBox from "../objetos/ComboBox";
 import Botones from "../objetos/Botones";
 import BusquedaDocumento from "../Gestorth/componentes/BusquedaDocumento";
-import "./modal_registrar_cita.css";
+// import "./modal_registrar_cita.css";
 
-const ModalRegistrarCita = ({ isOpen, isClose, dia, hora, medicoSeleccionado }) => {
+const ModalRegistrarCitaP = ({ isOpen, isClose, dia, hora, medicoSeleccionado }) => {
   const { register, handleSubmit, watch, setValue } = useForm();
 
   const [listaMedicos, setListaMedicos] = useState([]);
@@ -211,4 +211,4 @@ const [pacientesFiltrados, setPacientesFiltrados] = useState([]);
   );
 };
 
-export default ModalRegistrarCita;
+export default ModalRegistrarCitaP;

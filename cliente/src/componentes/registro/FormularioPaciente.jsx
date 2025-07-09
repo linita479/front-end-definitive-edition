@@ -6,6 +6,7 @@ import EtiquetaInput from "../objetos/EtiquetaInput";
 import Botones from "../objetos/Botones";
 import ComboBox from "../objetos/ComboBox";
 import emailjs from '@emailjs/browser';
+import Logo from "../Homepage/componentes/Logo";
 
 const FormularioPacienteExtendido = () => {
     const { register, handleSubmit, setError, formState: { errors } } = useForm();

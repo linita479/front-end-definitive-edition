@@ -1,0 +1,75 @@
+.modal-fondo {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-cita {
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 0.7rem;
+  right: 1rem;
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #444;
+}
+.busqueda-medico__lista {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  list-style: none;
+  padding: 0;
+  margin-top: 4px;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+.busqueda-medico__lista li {
+  padding: 8px;
+  cursor: pointer;
+}
+.busqueda-medico__lista li:hover {
+  background-color: #f0f0f0;
+}
+
+.busqueda-medico {
+  position: relative;
+}
+.paciente-seleccionado-banner {
+  background-color: #f3f9ff;
+  border-left: 4px solid #3498db;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.btn-limpiar-medico {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+}

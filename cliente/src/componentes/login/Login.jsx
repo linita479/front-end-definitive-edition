@@ -34,6 +34,7 @@ const Login = () => {
       console.log("Éxito:", result);
       sessionStorage.setItem("token", result.token);
       sessionStorage.setItem("tipo_usuario", result.tipo_usuario);  
+      sessionStorage.setItem("nro_doc" , result.user.usuario.nro_doc)
       if (result.tipo_usuario === "paciente") {
         console.log("Usuario autenticado correctamente");
         navigate("/pacientes")
