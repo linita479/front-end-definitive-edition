@@ -1,6 +1,6 @@
 import React from "react";
 
-const Card_cita = ({ dia, open, className, citasCount = 0, maxCitas = 24 }) => {
+const Card_citaP = ({ dia, open, className, citasCount = 0, maxCitas = 24 }) => {
   const porcentaje = Math.min(citasCount / maxCitas, 1);
 
   return (
@@ -17,4 +17,4 @@ const Card_cita = ({ dia, open, className, citasCount = 0, maxCitas = 24 }) => {
   );
 };
 
-export default Card_cita
+export default Card_citaP

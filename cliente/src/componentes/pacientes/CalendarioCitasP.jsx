@@ -1,9 +1,9 @@
 import React, { useState ,useEffect } from "react";
-import Card_cita from "./Card_cita";
-import Calendario_horas from "./Calendario_horas";
+import Card_citaP from "./Card_citaP";
+import Calendario_horasP from "./Calendario_horasP";
 import "./calendario_citas.css";
 
-const CalendarioCitas = () => {
+const CalendarioCitasP = () => {
   const [index, setIndex] = useState(0);
   const [open, setOpen] = useState(false);
   const [dia, setDia] = useState(null);
@@ -149,47 +149,27 @@ const CalendarioCitas = () => {
     : [];
   return (
     <>
-      <h1 className="calendario__titulo">Crear cita</h1>
+      <h1 className="calendario__titulo">📅 Crear cita</h1>
 
       <div className="calendario">
         <div className="busqueda-medico">
-          <div className="busqueda-wrapper">
-            <div className="icono-busqueda">
-              <svg
-                className="svg-busqueda"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 
-                    4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <input
-              onBlur={() => setTimeout(() => setBusqueda(""), 200)}
-              type="text"
-              className="input-busqueda"
-              placeholder="Buscar médico por nombre..."
-              value={busqueda}
-              onChange={(e) => {
-                const valor = e.target.value;
-                setBusqueda(valor);
-                const filtro = listaMedicos.filter((m) =>
-                  `${m.usuario.first_name} ${m.usuario.last_name}`
-                    .toLowerCase()
-                    .includes(valor.toLowerCase())
-                );
-              }}
-            />
-
-            <button className="btn-buscar">Buscar</button>
-          </div>
-
+          <input
+          onBlur={() => setTimeout(() => setBusqueda(""), 200)} 
+            type="text"
+            className="busqueda-medico__input"
+            placeholder="🔍 Buscar médico por nombre..."
+            value={busqueda}
+            onChange={(e) => {
+              const valor = e.target.value;
+              setBusqueda(valor);
+              const filtro = listaMedicos.filter(m =>
+                `${m.usuario.first_name} ${m.usuario.last_name}`
+                  .toLowerCase()
+                  .includes(valor.toLowerCase())
+              );
+              setMedicosFiltrados(filtro);
+            }}
+          />
           {busqueda.trim() && medicosFiltrados.length > 0 && (
             <ul className="busqueda-medico__lista">
               {medicosFiltrados.map((medico) => (
@@ -269,7 +249,7 @@ const CalendarioCitas = () => {
             }`;
 
             return (
-              <Card_cita
+              <Card_citaP
                 key={key}
                 dia={diaNumerico}
                 citasCount={citasPorDia[diaCard.toISOString().split("T")[0]] || 0}
@@ -282,9 +262,9 @@ const CalendarioCitas = () => {
         </div>
       </div>
 
-      <Calendario_horas isOpenCH={open} isCloseCH={handleClose} dia={dia} />
+      <Calendario_horasP isOpenCH={open} isCloseCH={handleClose} dia={dia} />
     </>
   );
 };
 
-export default CalendarioCitas;
+export default CalendarioCitasP;

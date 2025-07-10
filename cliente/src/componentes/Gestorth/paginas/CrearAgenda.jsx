@@ -132,7 +132,7 @@ const CrearAgenda = () => {
         register={register("nro_doc")}
         onClick={() => buscarUsuario(watch("nro_doc"))}
       />
-      <div className="contenedor-calendario-datos-personal"></div>
+
       {mostrarFormulario && <>
       <div className="contenedor-tarjetprofecional-calendario">
       <div className="card-profesional-notificacion">

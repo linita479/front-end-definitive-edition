@@ -30,7 +30,7 @@ const ModuloTh = () => {
         icono: "fas fa-calendar-alt",
         subOpciones: [
             { name: "Crear agenda", path: "crear-agenda", icono: "fas fa-graduation-cap" },
-            { name: "Consultar Solicitudes", path: "academico", icono: "fas fa-graduation-cap" },
+            { name: "Consultar agenda", path: "consultar-agenda", icono: "fas fa-graduation-cap" },
         ]
     }
     ];

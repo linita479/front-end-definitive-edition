@@ -1,32 +1,4 @@
-.card_cita_hora{
-    background-color: var(--blanco2); /* Fondo blanco brillante */
-    border-radius: 8px; /* Bordes redondeados */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--cafe); /* Texto oscuro */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-.calendario_horas__celda {
-    background-color: var(--blanco2); /* Fondo blanco brillante */
-    border-radius: 8px; /* Bordes redondeados */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--cafe); /* Texto oscuro */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.card_cita_hora:hover {
-    background-color: var(--axul); /* Azul suave para hover */
-    color: var(--blanco2); /* Texto blanco al hacer hover */
-    transform: scale(1.05); /* Pequeño zoom */
-}
+.card-cita-hora--pendiente { background: #fff3cd; }
+.card-cita-hora--atendida  { background: #d4edda; }
+.card-cita-hora--cancelada  { background: #f8d7da; }
+.card-cita-hora--disponible { background: #e9ecef; }

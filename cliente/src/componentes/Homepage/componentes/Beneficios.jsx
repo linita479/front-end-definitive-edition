@@ -18,7 +18,7 @@ const Beneficios = ()=>{
                     <div className="contenedor__registro__card-icon">
                         <FaRegEdit size={60} color="#00cfc8" />
                     </div>
-                    <p className="contenedor__registro__text-title">Te oftecemos servicios de salud</p>
+                    <p className="contenedor__registro__text-title">Te ofrecemos servicios de salud</p>
                     <p className="contenedor__registro__text-body">Accede a atención médica de calidad, gestión eficiente de tus consultas, y acompañamiento en todo momento.</p>
                 </div>
                 <button className="contenedor__registro-button"><p>Registrate aquí</p></button>

@@ -37,6 +37,12 @@ import ModuloPaciente from './componentes/pacientes/ModuloPaciente.jsx'
 import VerUsuarios from './componentes/gerente/VerUsuarios.jsx'
 import CrearAgenda from './componentes/Gestorth/paginas/CrearAgenda.jsx'
 import GestionarPersonal from './componentes/Gestorth/paginas/GestionarPersonal.jsx'
+import ConsultarAgenda from './componentes/Gestorth/paginas/ConsultarAgenda.jsx'
+import HistorialCitas from './componentes/gestor_citas/HistorialCitas.jsx'
+import GestorPaciente from './componentes/gestor_citas/GestorPaciente.jsx'
+import CalendarioCitasP from './componentes/pacientes/CalendarioCitasP.jsx'
+import HistorialCitasP from './componentes/pacientes/HistorialCitasP.jsx'
+import DatosPaciente from './componentes/pacientes/DatosPaciente.jsx.jsx'
 
 function App() {
   const [isActive, setIsActive] = useState(false);
@@ -99,19 +105,27 @@ function App() {
           <Route path='ver-centros-medicos' element={<VerCentrosMedicos />} />
           <Route path='ver-servicios' element={<VerServicios />} />
           <Route path='ver-usuarios' element={<VerUsuarios/>} />
+          
         </Route>
 
         <Route path='/pacientes' element={
           <div className=''>
             <ModuloPaciente/>
           </div>
-        } ></Route>
+          
+        } >
+          <Route path='ver-historial' element={<HistorialCitasP/>} />
+          <Route path='ver-calendario' element={<CalendarioCitasP/>} />
+          <Route path='ver-datos' element={<DatosPaciente/>} />
+        </Route>
         <Route path='/auxpage' element={
           <div className=''>
             <ModuloCitas />
           </div>
         } >
+          <Route path='historial-citas' element={<HistorialCitas/>} />
           <Route path='ver-calendario' element={<CalendarioCitas/>} />
+          <Route path='paciente' element={<GestorPaciente/>} />
         </Route>
         <Route path='/modulo_th' element={ <ModuloTh /> }>
           <Route path='registromedico' element={<RegistrarMedico />} />
@@ -122,6 +136,8 @@ function App() {
           <Route path='solicitudes' element={<SolicitudesActualizacion />} />
           <Route path='gestion_personal' element={<GestionarPersonal/>} />
           <Route path='crear-agenda' element={<CrearAgenda/>} />
+          <Route path='consultar-agenda' element={<ConsultarAgenda/>} />
+          
         </Route>
       </Routes>
      </BrowserRouter>

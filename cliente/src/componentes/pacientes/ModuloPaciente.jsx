@@ -13,23 +13,37 @@ const ModuloPaciente = () => {
   }, [navigate]);
 
   const listOpcions = [
-    { name: "Inicio", path: "/paciente" },
     {
-      name: "Citas",
+      name: "Inicio",
+      icono: "fas fa-home",
+      path: "/paciente"
+    },
+    {
+      name: "Mis Citas",
       icono: "fas fa-calendar-check",
       subOpciones: [
-        { name: "Solicitar Cita", path: "solicitar-cita" },
-        { name: "Consultar Historial de Citas", path: "historial-citas" }
+        { name: "Agendar Cita", path: "ver-calendario" },
+        { name: "Historial", path: "ver-historial" }
       ]
     },
     {
-      name: "Historia Clínica",
+      name: "Mi Información",
+      icono: "fas fa-id-card",
+      subOpciones: [
+        { name: "Ver Perfil", path: "ver-datos" },
+        { name: "Actualizar Datos", path: "editar-datos" }
+      ]
+    },
+    {
+      name: "Documentos",
       icono: "fas fa-file-medical",
       subOpciones: [
-        { name: "Ver Mis Historias Clínicas", path: "historias-clinicas" }
+        { name: "Historia Clínica", path: "historia-clinica" },
+        { name: "Documentos Médicos", path: "documentos-medicos" }
       ]
     }
   ];
+
 
   return (
     <div className="modulo-paciente">

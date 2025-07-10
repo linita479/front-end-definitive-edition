@@ -1,0 +1,53 @@
+.lista-bloques {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.tlt-bloques-disponibles {
+    font-size: 1.3rem;
+    color: #0077b6;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ul-lista-bloques-agenda {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.item-lista-bloques-agenda {
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #e0f7fa, #caf0f8);
+    border: 1px solid #90e0ef;
+    border-radius: 12px;
+    color: #023e8a;
+    font-weight: 500;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(0, 119, 182, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item-lista-bloques-agenda:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 119, 182, 0.2);
+}
+
+.prrf-informativo-bloques {
+    font-size: 0.95rem;
+    color: #6c757d;
+    background-color: #f1f3f5;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+}

@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import "./GestionPersonal.css";
 import ModalDetallesPersonal from "./ModalDetallesPersonal";
 import FormActualizar from "./FormActualizar";
+import ModalActualizarPaciente from "../../gestor_citas/ModalActualizarPaciente";
+
 
 const GestionarPersonal = () => {
     const [usuarios, setUsuarios] = useState([]);

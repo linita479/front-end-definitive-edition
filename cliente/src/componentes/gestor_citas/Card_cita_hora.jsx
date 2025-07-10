@@ -1,28 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import ModalRegistrarCita from "./Formulario_cita";
-import { useState } from "react";
+import DetalleCitaModal from "./DetallesCitaModal";
 import "./card_cita_horas.css";
 
+const Card_cita_horas = ({ hora, dia, estado, cita }) => {
+  const [open, setOpen] = useState(false);
 
-const Card_cita_horas = ({hora,dia}) => {
-    const [open,setOpen] = useState(false)
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
-    function handleOpen(){
-        setOpen(true)
-    }    
+  return (
+    <>
+      <div className={`card-cita-hora card-cita-hora--${estado}`} onClick={handleOpen}>
+        {hora} – <span className="estado">{estado}</span>
+      </div>
 
-    function handleClose(){
-        setOpen(false)
-    }
+     {estado === "disponible" && open && (
+  <ModalRegistrarCita
+    isOpen={open}
+    isClose={handleClose}
+    hora={hora}
+    dia={dia}
+  />
+)}
 
-    return(
-        <>
-        <div className="card_cita_hora" onClick={handleOpen}>
-            <p>{hora}</p>
-        </div>
-        <ModalRegistrarCita isOpen={open} dia={dia}  hora={hora} isClose={handleClose}></ModalRegistrarCita>
-        </>
-    )
-}
+{estado !== "disponible" && open && (
+  <DetalleCitaModal
+    isOpen={open}
+    isClose={handleClose}
+    cita={cita}
+  />
+)}
 
-export default Card_cita_horas
+    </>
+  );
+};
+
+export default Card_cita_horas;
