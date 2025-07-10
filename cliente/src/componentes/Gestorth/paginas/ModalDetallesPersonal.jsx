@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ModalDetallesPersonal.css";
 
 const ModalDetallesPersonal = ({ visible, personal, onClose }) => {
+  console.log(personal)
+  
+  const [mostrarAcademicos, setMostrarAcademicos] = useState(false);
+  const [mostrarExperiencia, setMostrarExperiencia] = useState(false);
+  const [listaAcademicos, setListaAcademicos] = useState([]);
+  const [listaExperiencia, setListaExperiencia] = useState([]);
+  const cargarAcademicos = async () => {
+    try {
+      const resp = await fetch(`http://127.0.0.1:8000/api/gestor_th/academicos/?nro_doc=${personal.nro_doc}`, {
+        headers: { Authorization: `Token ${sessionStorage.getItem("token")}` }
+      });
+      const data = await resp.json();
+      setListaAcademicos(data);
+      setMostrarAcademicos(true);
+    setMostrarExperiencia(false);
+    } catch (err) {
+      console.error("Error cargando académicos:", err);
+    }
+  };
+
+  const cargarExperiencia = async () => {
+    try {
+      const resp = await fetch(`http://127.0.0.1:8000/api/gestor_th/experiencia/laboral/?nro_doc=${personal.nro_doc}`, {
+        headers: { Authorization: `Token ${sessionStorage.getItem("token")}` }
+      });
+      const data = await resp.json();
+      setListaExperiencia(data);
+      setMostrarExperiencia(true);
+    setMostrarAcademicos(false);
+    } catch (err) {
+      console.error("Error cargando experiencia laboral:", err);
+    }
+  };
   if (!visible || !personal) return null;
 
   return (
@@ -40,6 +73,11 @@ const ModalDetallesPersonal = ({ visible, personal, onClose }) => {
           <p><strong className="strong-detalles-personla">Fecha de Nacimiento:</strong> {personal.fecha_nacimiento}</p>
           <p><strong className="strong-detalles-personla">Teléfono:</strong> {personal.telefono}</p>
           <p><strong className="strong-detalles-personla">Activo:</strong> {personal.is_active ? "Sí" : "No"}</p>
+          <div className="detallesPersonal__accionesBotones">
+            <button onClick={cargarAcademicos}>🧠 Ver Académicos</button>
+            <button onClick={cargarExperiencia}>🧰 Ver Experiencia Laboral</button>
+          </div>
+
         </div>
 
         <button className="detallesPersonal__botonCerrar" onClick={onClose}>
@@ -50,6 +88,33 @@ const ModalDetallesPersonal = ({ visible, personal, onClose }) => {
             </svg>
           </span>
         </button>
+        {mostrarAcademicos && (
+          <div className="seccion__tarjetas">
+            {listaAcademicos.map((item, idx) => (
+              <div key={idx} className="tarjeta__item">
+                <h4>{item.titulo}</h4>
+                <p><strong>Institución:</strong> {item.institucion_educativa}</p>
+                <p><strong>Titulo:</strong> {item.titulo_obtenido}</p>
+                <p><strong>Finalización:</strong> {item.fecha_culminado}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {mostrarExperiencia && (
+          <div className="seccion__tarjetas">
+            {listaExperiencia.map((item, idx) => (
+              <div key={idx} className="tarjeta__item">
+                <h4>{item.cargo}</h4>
+                <p><strong>Empresa:</strong> {item.nombre_empresa}</p>
+                <p><strong>Inicio:</strong> {item.fecha_inicio}</p>
+                <p><strong>Finalización:</strong> {item.fecha_finalizacion}</p>
+                <p><strong>Tipo de contrato:</strong> {item.tipo_contrato}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import emailjs from '@emailjs/browser';
 import Logo from "../Homepage/componentes/Logo";
 import './FormularioRoles.css';
 import './ErrorContrasena.css'
+import { Tooltip } from 'react-tooltip';
 
 const FormularioPacienteExtendido = () => {
     const { register, handleSubmit, setError, watch, formState: { errors } } = useForm();
@@ -218,23 +219,27 @@ const FormularioPacienteExtendido = () => {
                             placeholder="Correo electrónico"
                             register={register("email", { required: 'Este campo es obligatorio' })}
                         />
-                        <EtiquetaInput
+                        <a data-tooltip-id="my-tooltip" data-tooltip-content="⚠️ La contraseña debe tener entre 8 y 16 caracteres, al menos una mayúscula, un número y un carácter especial.">
+                            <EtiquetaInput
                             label="Contraseña"
                             type="password"
                             placeholder="Contraseña"
                             register={register("password", { required: 'Este campo es obligatorio' })}
                         />
+                            </a>
+                            <Tooltip id="my-tooltip" />
+                        
                     </div>
                     <div className="cont-bototn-form-paciente">
                         <Botones name="Registrar" tipo="submit" />
                     </div>
                 </form>
                     {/* ✅ Mensaje debajo del campo de contraseña */}
-                    {password && !requisitosCumplidos(password) && (
+                    {/* {password && !requisitosCumplidos(password) && (
                         <div className="advertencia-contrasena">
                           <p>⚠️ La contraseña debe tener entre 8 y 16 caracteres, al menos una mayúscula, un número y un carácter especial.</p>
                         </div>
-                    )}
+                    )} */}
                 </div>
             </div>
         </>
