@@ -57,11 +57,11 @@ if(dashboardData === null){
         <TopMedicos medicos={dashboardData.top_medicos} />
         
 
-<CitasPorMes citasMes={dashboardData.citas_por_mes} />
+{/* <CitasPorMes citasMes={dashboardData.citas_por_mes} />
         <RegimenYEpsFrecuentes
   regimen={dashboardData.regimen_frecuente}
   eps={dashboardData.eps_frecuentes}
-/>
+/> */}
 
 
 <EstadoCitas estados={dashboardData.estado_citas} />
