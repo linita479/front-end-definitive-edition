@@ -11,7 +11,7 @@ const ModuloGerente = () => {
     }
   }, [navigate]);
     const listOpcions = [
-  { name: "Inicio", path: "/admin", icono: "fas fa-home" },
+  { name: "Inicio", path: "dashboar-admin", icono: "fas fa-home" },
   {
     name: "Centro Medico",
     icono: "fas fa-hospital",

@@ -43,6 +43,7 @@ import GestorPaciente from './componentes/gestor_citas/GestorPaciente.jsx'
 import CalendarioCitasP from './componentes/pacientes/CalendarioCitasP.jsx'
 import HistorialCitasP from './componentes/pacientes/HistorialCitasP.jsx'
 import DatosPaciente from './componentes/pacientes/DatosPaciente.jsx.jsx'
+import Dashboard from './componentes/gerente/dashboard.jsx'
 
 function App() {
   const [isActive, setIsActive] = useState(false);
@@ -100,6 +101,7 @@ function App() {
           <ModuloGerente />
           </div>
         }>
+          <Route path='dashboar-admin' element={<Dashboard />} />
           <Route path='registro-th' element={<RegistroTh />} />
           <Route path='centro/medico' element={<RegistroSede />} />
           <Route path='ver-centros-medicos' element={<VerCentrosMedicos />} />

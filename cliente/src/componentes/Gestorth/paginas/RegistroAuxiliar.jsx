@@ -14,6 +14,8 @@ const RegistroAuxiliar = () => {
     /* ───────────── estados ───────────── */
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
     const [errorBusqueda, setErrorBusqueda] = useState("");
+    const [usuario, setUsuario] = useState(null);
+
 
     /* spinner de carga */
     const [cargando, setCargando] = useState(false);
@@ -54,6 +56,7 @@ const RegistroAuxiliar = () => {
             setMostrarFormulario(true);
             setErrorBusqueda("");
             console.log("Usuario encontrado:", data.usuario);
+            
         } else {
             setMostrarFormulario(false);
             setErrorBusqueda("Usuario no encontrado.");
@@ -68,46 +71,69 @@ const RegistroAuxiliar = () => {
 
     /* ───────────── submit ───────────── */
     const onSubmit = async (data) => {
-        console.log("Datos del formulario:", data);
-        data.tipo_usuario = "auxiliar";
-        console.log("Datos a enviar:", data);
+      console.log("Datos del formulario:", data);
+      data.tipo_usuario = "auxiliar";
 
-        setCargando(true);
-        try {
+      const dataHV = {
+        ...data,
+        usuario: usuario  // Asegúrate que `usuario` está seteado en el componente
+      };
+
+      setCargando(true);
+
+      try {
+        // Paso 1: Registrar usuario auxiliar
         const response = await fetch("http://127.0.0.1:8000/actualizar_datos/", {
-            method: "POST",
-            headers: {
+          method: "POST",
+          headers: {
             "Content-Type": "application/json",
             Authorization: `Token ${sessionStorage.getItem("token")}`,
-            },
-            body: JSON.stringify(data),
+          },
+          body: JSON.stringify(data),
         });
 
         if (response.ok) {
-            const result = await response.json();
-            console.log("✅ Registro exitoso:", result);
+          const result = await response.json();
+          console.log("✅ Registro exitoso del auxiliar:", result);
 
-            setModal({
+          // Paso 2: Registrar hoja de vida asociada
+          const respHV = await fetch("http://127.0.0.1:8000/api/gestor_th/hoja/vida/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Token ${sessionStorage.getItem("token")}`,
+            },
+            body: JSON.stringify(dataHV),
+          });
+
+          if (!respHV.ok) {
+            const errHV = await respHV.json();
+            console.warn("❌ Error en hoja de vida:", errHV);
+            throw new Error(errHV?.detail || "Error al generar la hoja de vida.");
+          }
+
+          setModal({
             visible: true,
             tipo: "success",
-            mensaje: "¡Registro realizado con éxito!",
-            });
-            setMostrarFormulario(false);
+            mensaje: "¡Registro y hoja de vida realizados con éxito!",
+          });
+          setMostrarFormulario(false);
         } else {
-            const err = await response.json();
-            throw new Error(err?.detail || "Error al registrar.");
+          const err = await response.json();
+          throw new Error(err?.detail || "Error al registrar el auxiliar.");
         }
-        } catch (error) {
-        console.error("Error al registrar el auxiliar:", error);
+      } catch (error) {
+        console.error("Error total:", error);
         setModal({
-            visible: true,
-            tipo: "error",
-            mensaje: error.message || "Hubo un problema. Intenta nuevamente.",
+          visible: true,
+          tipo: "error",
+          mensaje: error.message || "Hubo un problema. Intenta nuevamente.",
         });
-        } finally {
+      } finally {
         setTimeout(() => setCargando(false), 800);
-        }
+      }
     };
+
 
     return (
         <div className="josessasa">

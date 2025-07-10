@@ -12,9 +12,10 @@ const Academico = () =>{
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
     const [errorBusqueda, setErrorBusqueda] = useState("");
     const [registroExitoso, setRegistroExitoso] = useState(false);
+    const [mostrarFormularioE, setMostrarFormularioE] = useState(false);
+    const [usuario, setUsuario] = useState(null);
 
-
-    const buscarUsuario = async (nrodoc)=>{
+   const buscarUsuario = async (nrodoc) => {
         try{
             const response = await fetch(`http://127.0.0.1:8000/buscar_usuario/?nro_doc=${nrodoc}`,{
                 method: "GET",
@@ -24,6 +25,7 @@ const Academico = () =>{
             });
             if (response.ok){
                 const data = await response.json();
+                setUsuario(data.usuario);
                 setMostrarFormulario(true); 
                 setErrorBusqueda("");
                 console.log("Usuario encontrado:", data.usuario);
@@ -156,6 +158,54 @@ const Academico = () =>{
                         </div>
                     </div>
                     )}
+                    <div className="contenedor_exp_1">
+                        {mostrarFormulario && (
+                        <div className="contenedor-tarjetprofecional-r">
+                            <div className="card-profesional-notificacion">
+                            <svg
+                                className="icono-doctor-profesional"
+                                width="80"
+                                height="80"
+                                viewBox="0 0 64 64"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <circle cx="32" cy="20" r="12" stroke="#00b4d8" strokeWidth="3" />
+                                <path
+                                d="M12 54V46C12 38.82 22 34 32 34C42 34 52 38.82 52 46V54"
+                                stroke="#90e0ef"
+                                strokeWidth="3"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                />
+                                <path
+                                d="M24 50L28 42"
+                                stroke="#00b4d8"
+                                strokeWidth="3"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                />
+                                <path
+                                d="M40 50L36 42"
+                                stroke="#00b4d8"
+                                strokeWidth="3"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                />
+                            </svg>
+                            <h3>👤 Información del profesional</h3>
+                            <p><strong>Nombre:</strong> {`${usuario.first_name} ${usuario.last_name}`}</p>
+                            <p><strong>Tipo de documento:</strong> {usuario.tipo_doc}</p>
+                            <p><strong>N° Documento:</strong> {usuario.nro_doc}</p>
+                            <p><strong>Email:</strong> {usuario.email || "No disponible"}</p>
+
+                            <button className="btn-agregar-exp" onClick={() => setMostrarFormularioE(true)}>
+                                ➕ Agregar experiencia
+                            </button>
+                            </div>
+                        </div>
+                        )}
+                {mostrarFormularioE && 
                 <form action="" onSubmit={handleSubmit(onSubmit)} className="formulario-registro-academico">
                     <header className="header-form-personal-medico">
                         <h1 className="header-reGistro-medico-titulo">Registrar información academica</h1>
@@ -186,7 +236,10 @@ const Academico = () =>{
                         <EtiquetaInput label="Soporte" type="file" placeholder="Sube el soporte academico" register={register("Soporte")} />
                     </div>
                     <Botones name="Registrar" tipo="submit" />
-                </form>
+                </form>        
+}
+                    </div>
+                    
             </div>
         </div>
         </>
