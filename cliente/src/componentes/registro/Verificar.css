@@ -53,3 +53,72 @@
     font-size: 20px;
     font-weight: 500;
 }
+
+
+.modal-verificado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-contenido {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: scaleIn 0.3s ease-in-out;
+}
+
+.check-circle {
+    font-size: 50px;
+    color: #3ccf4e;
+    margin-bottom: 10px;
+    animation: bounceIn 0.4s ease;
+}
+
+.mensaje-verificado {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.barra-progreso {
+    height: 6px;
+    background: linear-gradient(to right, #3ccf4e 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    animation: growBar 2.5s forwards;
+    border-radius: 5px;
+}
+
+@keyframes growBar {
+    0% {
+        width: 0;
+        background-position: center bottom;
+    }
+    100% {
+        width: 100%;
+        background-position: left bottom;
+    }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}

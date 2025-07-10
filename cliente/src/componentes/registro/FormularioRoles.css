@@ -22,7 +22,7 @@
 }
 
 .fromulario__registro__rol{
-    width: 600px;
+    width: 500px;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -54,22 +54,37 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: auto;
+    width: 100%;
     height: 80px;
-    /* border: solid black 2px; */
-    width: 350px;
-    
-    /* align-items: center; */
+    border: solid black 2px;
 }
-
 .contenedor-etiqueta-for-rol-select{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: auto;
+    width: 350px;
     height: 80px;
-    /* border: solid black 2px; */
-    width: 450px;
+    border: solid black 2px;
+}
+
+.contenedor-etiqueta-for-rol-selectt{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+.contenedor-etiqueta-for-roll{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    padding-left: 20px;
 }
 
 .input-wrapper-etiqueta__input-label{

@@ -17,7 +17,6 @@ const ModuloTh = () => {
         subOpciones: [
         { name: "Formación Académica", path: "academico", icono: "fas fa-graduation-cap" },
         { name: "Experiencia Laboral", path: "experiencia", icono: "fas fa-briefcase" },
-        { name: "Consultar Personal", path: "consultar", icono: "fas fa-search" }
         ]
     },
     {

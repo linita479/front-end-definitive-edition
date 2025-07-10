@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./ModalDetallesPersonal.css";
 
 const ModalDetallesPersonal = ({ visible, personal, onClose }) => {
-  console.log(personal)
+  
   
   const [mostrarAcademicos, setMostrarAcademicos] = useState(false);
   const [mostrarExperiencia, setMostrarExperiencia] = useState(false);
@@ -14,7 +14,8 @@ const ModalDetallesPersonal = ({ visible, personal, onClose }) => {
         headers: { Authorization: `Token ${sessionStorage.getItem("token")}` }
       });
       const data = await resp.json();
-      setListaAcademicos(data);
+      console.log(data)
+      setListaAcademicos(data.academicos);
       setMostrarAcademicos(true);
     setMostrarExperiencia(false);
     } catch (err) {
@@ -28,6 +29,7 @@ const ModalDetallesPersonal = ({ visible, personal, onClose }) => {
         headers: { Authorization: `Token ${sessionStorage.getItem("token")}` }
       });
       const data = await resp.json();
+      console.log(data)
       setListaExperiencia(data);
       setMostrarExperiencia(true);
     setMostrarAcademicos(false);
@@ -74,8 +76,8 @@ const ModalDetallesPersonal = ({ visible, personal, onClose }) => {
           <p><strong className="strong-detalles-personla">Teléfono:</strong> {personal.telefono}</p>
           <p><strong className="strong-detalles-personla">Activo:</strong> {personal.is_active ? "Sí" : "No"}</p>
           <div className="detallesPersonal__accionesBotones">
-            <button onClick={cargarAcademicos}>🧠 Ver Académicos</button>
-            <button onClick={cargarExperiencia}>🧰 Ver Experiencia Laboral</button>
+            <button onClick={cargarAcademicos} className="btn-agregar-exp">Ver Académicos</button>
+            <button onClick={cargarExperiencia} className="btn-agregar-exp">Ver Experiencia Laboral</button>
           </div>
 
         </div>

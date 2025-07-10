@@ -33,14 +33,14 @@ const VerCentrosMedicos = () => {
   return (
     <div className='ver-centros-medicos'>
       <h2 className='ver-centros-medicos__titulo'>Centros Médicos Registrados</h2>
-      <table border="1" cellPadding="8" cellSpacing="0" className='tabla-personal'>
-        <thead className=''>
-          <tr className=''>
-            <th>NIT</th>
-            <th>Nombre</th>
-            <th>Dirección</th>
-            <th>Teléfono</th>
-            <th>Email</th>
+      <table border="1" cellPadding="8" cellSpacing="0" className="tabla-personal">
+        <thead className='ver-centros-medicos__tabla__thead'>
+          <tr className='ver-centros-medicos__tabla__tr'>
+            <th className='item-tabla-sede'>NIT</th>
+            <th className='item-tabla-sede'>Nombre</th>
+            <th className='item-tabla-sede'>Dirección</th>
+            <th className='item-tabla-sede'>Teléfono</th>
+            <th className='item-tabla-sede'>Email</th>
           </tr>
         </thead>
         <tbody className='ver-centros-medicos__tabla__tbody'>
