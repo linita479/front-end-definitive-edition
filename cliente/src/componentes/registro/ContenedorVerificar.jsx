@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import {useNavigate} from "react-router-dom"
 import EtiquetaInput from "../objetos/EtiquetaInput";
@@ -7,6 +7,8 @@ import Logo from '../Homepage/componentes/Logo'
 import './Verificar.css'
 const ContenedorVerificar = () => {
     const { register, handleSubmit,setError, formState: { errors } } = useForm();
+    const [modalVisible, setModalVisible] = useState(false);
+
     const navigate = useNavigate();
     async function verificar(datos){
         const url = "http://127.0.0.1:8000/activar_usuario/"
@@ -20,7 +22,10 @@ const ContenedorVerificar = () => {
         const result = await response.json();
         if (response.ok) {
             console.log("Usuario verificado exitosamente:", result);
-            navigate("/login");
+            setModalVisible(true);
+            setTimeout(() => {
+                navigate("/login");
+            }, 3000);
             return;
         }
         setError("codigo_verificacion" , {
@@ -38,6 +43,15 @@ const ContenedorVerificar = () => {
 
     return (
         <div className="contenedor-verificar">
+            {modalVisible && (
+                <div className="modal-verificado">
+                    <div className="modal-contenido">
+                        <div className="check-circle">✔</div>
+                        <p className="mensaje-verificado">Cuenta verificada correctamente</p>
+                        <div className="barra-progreso"></div>
+                    </div>
+                </div>
+            )}
             <Logo />
             <div className="verificar">
                 {/* <h1>Verifica tu cuenta</h1>

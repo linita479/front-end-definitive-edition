@@ -71,8 +71,8 @@ const FormularioRoles = () => {
                 <header className="header-form-registro-rol">
                     <h1 className="tlt-header-formulario-rol">Registro usuario</h1>
                 </header>
-                <div className="contenedor-inputs-doble-rol">
-                    <div className="contenedor-etiqueta-for-rol">
+
+                    <div className="contenedor-etiqueta-for-roll">
                         <label htmlFor="" className="input-wrapper-etiqueta__input-label">Numero de identificación</label>
                         <input
                             type="text"
@@ -88,7 +88,7 @@ const FormularioRoles = () => {
                         />
                         {errors.nro_doc && <span className='error'>{errors.nro_doc.message}</span>}
                     </div>
-                    <div className="contenedor-etiqueta-for-rol-select">
+                    <div className="contenedor-etiqueta-for-rol-selectt">
                         <label htmlFor="" className="input-wrapper-etiqueta__input-label">Tipo de documento</label>
                         <select
                             className="input-wrapper__input-field"
@@ -105,9 +105,9 @@ const FormularioRoles = () => {
                         </select>
                         {errors.tipo_doc && <span className='error'>{errors.tipo_doc.message}</span>}
                     </div>
-                </div>
-                <div className="contenedor-inputs-doble-rol">
-                    <div className="contenedor-etiqueta-for-rol">
+                
+                
+                    <div className="contenedor-etiqueta-for-roll">
                         <label htmlFor="" className="input-wrapper-etiqueta__input-label">Email</label>
                         <input
                             type="email"
@@ -117,7 +117,7 @@ const FormularioRoles = () => {
                         />
                         {errors.email && <span className='error'>{errors.email.message}</span>}
                     </div>
-                    <div className="contenedor-etiqueta-for-rol">
+                    <div className="contenedor-etiqueta-for-roll">
                         <label htmlFor="" className="input-wrapper-etiqueta__input-label">Contraseña</label>
                         <input
                             type="password"
@@ -127,7 +127,7 @@ const FormularioRoles = () => {
                             />
                         {errors.password && <span className='error'>{errors.password.message}</span>}
                     </div>
-                </div>
+                
                 <Botones name="Registrar" tipo="submit" />
             </form>
         </div>
