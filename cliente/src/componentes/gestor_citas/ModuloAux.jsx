@@ -5,16 +5,34 @@ const ModuloCitas = () => {
     const listOpcions = [
         {
             name: "Citas",
+            icono: "fas fa-calendar-check", // 📅 ícono principal
             subOpciones: [
-                { name: "Ver Calendario", path: "ver-calendario" },
-                { name: "Ver Historial de Citas", path: "historial-citas" }
+                {
+                    name: "Ver Calendario",
+                    path: "ver-calendario",
+                    icono: "fas fa-calendar-alt" // 🗓️
+                },
+                {
+                    name: "Ver Historial de Citas",
+                    path: "historial-citas",
+                    icono: "fas fa-history" // ⏳
+                }
             ]
         },
         {
             name: "Pacientes",
+            icono: "fas fa-user-injured", // 🧍‍♂️ ícono principal
             subOpciones: [
-                { name: "Crear Paciente", path: "crear-paciente" },
-                { name: "Consultar Paciente", path: "paciente" }
+                {
+                    name: "Crear Paciente",
+                    path: "crear-paciente",
+                    icono: "fas fa-user-plus" // ➕
+                },
+                {
+                    name: "Consultar Paciente",
+                    path: "paciente",
+                    icono: "fas fa-search" // 🔍
+                }
             ]
         }
     ];

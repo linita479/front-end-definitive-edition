@@ -1,86 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 .calendario {
-  max-width: 900px;
-  margin: auto;
+  font-family: 'Poppins', sans-serif;
   padding: 1rem;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-.calendario__titulo {
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.calendario__mes-navegacion {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.calendario__btn-mes {
-  background: #007bff;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.calendario__btn-mes:disabled {
-  background: #aaa;
-  cursor: not-allowed;
-}
-
-.calendario__mes-actual {
-  font-size: 1.5rem;
-  color: #222;
-}
-
+/* Cabecera con los nombres de los días */
 .calendario__cabecera-semana {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  margin-top: 1rem;
   text-align: center;
-  font-weight: bold;
-  color: #444;
+  font-weight: 600;
+  color: #7b52b9;
+  font-size: 0.95rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
 }
 
+/* Grid de días */
 .calendario__grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 6px;
-  margin-top: 0.5rem;
+  gap: 0.4rem;
+  margin-top: 1rem;
 }
 
+/* Día vacío (relleno) */
+.calendario__dia--relleno {
+  height: 80px;
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+}
+
+/* Día base */
 .calendario__dia {
-  background: #f1f1f1;
-  border-radius: 6px;
-  padding: 0.8rem 0;
-  text-align: center;
+  height: 80px;
+  border-radius: 0.7rem;
+  padding: 0.5rem;
   font-size: 0.9rem;
-  color: #222;
-  transition: 0.2s;
-}
-
-.calendario__dia:hover {
-  background: #d0e4ff;
-}
-
-.calendario__dia--activo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
   cursor: pointer;
 }
 
-.calendario__dia--pasado {
-  background: #eee;
-  color: #999;
-  pointer-events: none;
+/* Días activos - con borde azulito */
+.calendario__dia--activo {
+  border: 2px solid #00b4d8;
+  color: #43216f;
+}
+.calendario__dia--activo:hover {
+  box-shadow: 0 6px 14px rgba(123, 82, 185, 0.2);
+  transform: scale(1.02);
+  background-color: #f9f5ff;
 }
 
-.calendario__dia--relleno {
-  background: transparent;
+/* Días pasados */
+.calendario__dia--pasado {
+  background-color: #f1f1f1;
+  color: #999999;
+  border: 1px solid #ccc;
+  cursor: not-allowed;
 }
+
+/* Días bloqueados */
+.calendario__dia--bloqueado {
+  background-color: #fcf3f4;
+  color: #c34646;
+  border: 1px dashed #ffb8b8;
+  cursor: not-allowed;
+}
+
+/* Números de día */
+.calendario__dia .numero {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Contador de citas */
+.calendario__dia .citas-count {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #666;
+}
+
+
 
 
 .busqueda-medico {
@@ -90,13 +100,71 @@
 }
 
 
-.busqueda-medico__input {
+.busqueda-wrapper {
+  position: relative;
   width: 100%;
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 0.95rem;
+  max-width: 480px;
+  background-color: #f3f4f6;
+  border-radius: 16px;
+  padding: 6px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
 }
+
+.busqueda-wrapper:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.icono-busqueda {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.svg-busqueda {
+  width: 20px;
+  height: 20px;
+  color: #9ca3af;
+}
+
+.input-busqueda {
+  width: 100%;
+  padding: 12px 100px 12px 36px;
+  font-size: 16px;
+  color: #1f2937;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-buscar {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  bottom: 6px;
+  padding: 0 20px;
+  background-color: #00b4d8;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-buscar:hover {
+  background-color: #0096c7;
+}
+
 
 .busqueda-medico__lista {
   position: absolute;
@@ -149,3 +217,93 @@
   opacity: 0.6;
   border: 1px dashed #ddd;
 }
+
+
+.calendario__titulo{
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+
+/* Banner del médico seleccionado */
+.medico-seleccionado-banner {
+  background: linear-gradient(to right, #e0e0ff, #f0eaff);
+  border-left: 5px solid #a370f0;
+  padding: 1rem 1.5rem;
+  border-radius: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+/* Nombre del médico */
+.nombre-medico {
+  font-size: 1.1rem;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Nombre destacado */
+.texto-resaltar-perfil-medico {
+  color: #058ac4;
+}
+
+/* Especialidad en cursiva */
+.especialidad-medico {
+  font-style: italic;
+  color: #4f77c0;
+  margin-left: 0.4em;
+}
+
+/* Botón estilo Uiverse.io */
+.btn-limpiar-medico {
+  position: relative;
+  font-size: 1.05em;
+  padding: 0.6em 1.4em;
+  background-color: #ff6b6b;
+  text-decoration: none;
+  border: none;
+  border-radius: 0.5em;
+  color: #DEDEDE;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.btn-limpiar-medico::before {
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 50% #ff6b6b 50%,#ff6b6b 60%);
+  border-radius: 0 0 0.5em 0;
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.btn-limpiar-medico:hover::before {
+  width: 1.6em;
+  height: 1.6em;
+}
+
+.btn-limpiar-medico:active {
+  box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);
+  transform: translate(0.1em, 0.1em);
+}
+
+.btn-limpiar-medico b {
+  position: relative;
+  z-index: 2;
+}
+

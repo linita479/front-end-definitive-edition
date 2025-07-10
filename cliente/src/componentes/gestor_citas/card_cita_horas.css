@@ -2,3 +2,72 @@
 .card-cita-hora--atendida  { background: #d4edda; }
 .card-cita-hora--cancelada  { background: #f8d7da; }
 .card-cita-hora--disponible { background: #e9ecef; }
+.card-cita-hora {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  border: 2px solid #00b4d8;
+  border-radius: 0.8rem;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 180, 216, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover suave */
+.card-cita-hora:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 180, 216, 0.2);
+  border-color: #0096c7;
+}
+
+/* Etiqueta de estado */
+.card-cita-hora .estado {
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #00b4d8;
+}
+
+/* Estado: disponible */
+.card-cita-hora--disponible {
+  border-color: #00b4d8;
+}
+
+/* Estado: confirmado */
+.card-cita-hora--confirmado {
+  border-color: #38b000;
+  background-color: #f0fff5;
+}
+
+.card-cita-hora--confirmado .estado {
+  color: #2d6a4f;
+}
+
+/* Estado: cancelado */
+.card-cita-hora--cancelado {
+  border-color: #ef233c;
+  background-color: #fff0f3;
+}
+
+.card-cita-hora--cancelado .estado {
+  color: #d90429;
+}
+
+/* Estado: pendiente */
+.card-cita-hora--pendiente {
+  border-color: #ffb703;
+  background-color: #fffbea;
+}
+
+.card-cita-hora--pendiente .estado {
+  color: #fb8500;
+}
+

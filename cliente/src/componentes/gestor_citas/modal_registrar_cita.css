@@ -18,6 +18,11 @@
   overflow-y: auto;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .cerrar-modal {
@@ -72,4 +77,58 @@
   cursor: pointer;
   font-size: 0.9rem;
   margin-left: 1rem;
+}
+
+.form-crear-cita-medica{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titulo-modal-cita{
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.header-contenedor-form-cita{
+  border: solid black 2px;
+}
+
+.btn-guardar-cita-medica{
+  width: 6.5em;
+  height: 2.3em;
+  margin: 0.5em;
+  background:  hsl(197, 97%, 42%); /* Verde a aguamarina */
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.5s ease;
+}
+
+.btn-guardar-cita-medica:hover{
+    color: #0f172a;
+}
+
+.btn-guardar-cita-medica::after{
+  content: "";
+  background:  hsl(197, 97%, 65%);
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s ease;
+}
+
+.btn-guardar-cita-medica:hover::after {
+  transform: skewX(-45deg) scale(1, 1);
 }

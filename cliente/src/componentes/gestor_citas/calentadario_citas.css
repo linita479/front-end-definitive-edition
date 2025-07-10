@@ -1,90 +1,91 @@
-:root {
-    --blanco: #f6f5f7;
-    --cafe: #333;
-    --axul: #4bb6b7;
-    --blanco2: #fff;
+/* Estilo base compartido (sin cambios) */
+.btn-mes-anterior,
+.btn-mes-siguiente {
+  background: #00b4d8;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding: 0.35em 3.3em 0.35em 1.2em;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 2.8em;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: inset 0 0 1.6em -0.6em #0191ad;
+  transition: all 0.3s ease;
+  padding-left: 3.3em;
 }
 
-.calendario {
-    width: 68vw;
-    display: inline-block;
-    background-color: var(--axul); /* Fondo azul moderno */
-    padding: 20px;
-    border-radius: 20px; /* Bordes suaves */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra elegante */
-    font-family: 'Roboto', sans-serif; /* Tipografía moderna */
+/* Ícono del botón anterior (sin cambios) */
+.btn-mes-anterior .icono-btn-mes {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  right: 0.3em;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #00b4d8;
+  transition: all 0.3s ease;
 }
 
-.calendario__meses_info {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    align-items: center;
-    background-color: var(--blanco); /* Fondo blanco claro */
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+/* Ícono del botón siguiente: alineado a la IZQUIERDA */
+.btn-mes-siguiente .icono-btn-mes {
+  background: white;
+  margin-right: 1em;
+  position: absolute;
+  left: 0.3em; /* 👈 se ubica a la izquierda */
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #00b4d8;
+  transition: all 0.3s ease;
 }
 
-.calendario__meses_info button {
-    border-radius: 18px;
-    padding: 10px 20px; /* Espaciado más amplio */
-    background-color: var(--cafe); /* Botón oscuro */
-    color: var(--blanco2); /* Texto blanco */
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+/* Efecto de expansión al hacer hover */
+.btn-mes-anterior:hover .icono-btn-mes,
+.btn-mes-siguiente:hover .icono-btn-mes {
+  width: calc(100% - 0.6em);
 }
 
-.calendario__meses_info button:hover {
-    background-color: var(--axul); /* Hover azul vibrante */
-    transform: scale(1.1); /* Efecto de zoom */
+/* SVG del ícono */
+.icono-btn-mes svg {
+  width: 1.1em;
+  color: #00b4d8;
+  transition: transform 0.3s ease;
+  z-index: 2;
 }
 
-.calendario__dias {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    padding: 10px 20px;
-    text-align: center;
-     /* Fondo blanco puro */
-    
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+/* Movimiento de flecha */
+.btn-mes-anterior:hover svg {
+  transform: translateX(-0.1em); /* mueve a la izquierda */
 }
-.textoo{
-    font-size: 25px;
-    font-family: 'Roboto', sans-serif;
+.btn-mes-siguiente:hover svg {
+  transform: translateX(0.1em); /* mueve a la derecha */
 }
 
-.calendario__contenedor {
-    background-color: var(--blanco); /* Fondo blanco claro */
-    width: 100%;
-    height: 400px;
-    padding: 20px;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    gap: 10px; /* Espacio entre las celdas */
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra interna */
+/* Efecto de click */
+.btn-mes-anterior:active .icono-btn-mes,
+.btn-mes-siguiente:active .icono-btn-mes {
+  transform: scale(0.95);
 }
 
-.calendario__celda {
-    background-color: var(--blanco2); /* Fondo blanco puro */
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-    color: var(--cafe); /* Texto oscuro */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+/* Mes actual */
+.calendario__mes-actual {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #023e8a;
 }
 
-.calendario__celda:hover {
-    background-color: var(--axul); /* Azul vibrante para hover */
-    color: var(--blanco2); /* Texto blanco al hacer hover */
-    transform: scale(1.05); /* Pequeño zoom */
-}
+

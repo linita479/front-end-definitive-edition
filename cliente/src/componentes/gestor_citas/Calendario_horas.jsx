@@ -134,13 +134,28 @@ console.log("⏰ citasPorHora:", citasPorHora);
 
   return (
     <>
+    <div className="super-cont-horas-calendario">
       <h1 className="calendario_horas__titulo">
-        🕑 Citas – {dia.toLocaleDateString("es-CO")}
+        <i className="fas fa-clock reloj-icono"></i> Citas – {dia.toLocaleDateString("es-CO")}
       </h1>
 
       <div className="calendario_horas">
-        <button className="calendario__boton_atras" onClick={isCloseCH}>
-          ← Volver
+        <button className="btn-mes-anterior" onClick={isCloseCH}>
+          <span>Volver</span>
+              <div className="icono-btn-mes">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M7.828 11l5.364-5.364-1.414-1.414L4 12l7.778 7.778 1.414-1.414L7.828 13H20v-2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
         </button>
 
         <div className="calendario_horas__contenedor">
@@ -176,6 +191,7 @@ console.log("⏰ citasPorHora:", citasPorHora);
 
         </div>
       </div>
+    </div>
     </>
   );
 };

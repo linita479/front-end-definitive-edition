@@ -8,15 +8,13 @@
 .calendario_horas {
     width: 68vw;
     display: inline-block;
-    background-color: var(--axul); /* Fondo con el azul que proporcionaste */
     padding: 20px;
     border-radius: 20px; /* Bordes suaves */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra elegante */
-    font-family: 'Roboto', sans-serif; /* Tipografía moderna */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
 }
 
 .calendario_horas__contenedor {
-    background-color: var(--blanco); /* Fondo blanco claro */
     width: 100%;
     height: 350px;
     padding: 20px;
@@ -25,45 +23,124 @@
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(6, 1fr);
     border-radius: 16px;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra interna */
+    border: solid black 2px;
+    
     gap: 10px; /* Espacio entre las celdas */
 }
 
-.calendario_horas__celda {
-    background-color: var(--blanco2); /* Fondo blanco brillante */
-    border-radius: 8px; /* Bordes redondeados */
+/* CONTENEDOR GENERAL (se mantiene como está, solo agregamos sombra suave) */
+.super-cont-horas-calendario {
+  border: 2px solid #00b4d8; /* reemplazamos negro por azul acento */
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 0 8px 24px rgba(0, 180, 216, 0.1);
+  padding: 2rem;
+}
+
+/* CONTENEDOR DE HORAS */
+.calendario_horas {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* CONTENEDOR DE BOTONES Y TARJETAS DE HORAS */
+.calendario_horas__contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  border-top: 2px solid #e0f7fa;
+}
+
+/* BOTÓN VOLVER */
+.btn-mes-anterior {
+  background: #00b4d8;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding: 0.35em 1.5em;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  height: 2.8em;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: inset 0 0 1.6em -0.6em #019ebd;
+  transition: all 0.3s ease;
+  gap: 0.6em;
+}
+
+.icono-btn-mes {
+  background: white;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #00b4d8;
+  transition: all 0.3s ease;
+}
+
+.btn-mes-anterior:hover .icono-btn-mes {
+  transform: scale(1.05);
+}
+.btn-mes-anterior:hover svg {
+  transform: translateX(-0.1em);
+}
+.btn-mes-anterior:active .icono-btn-mes {
+  transform: scale(0.95);
+}
+.icono-btn-mes svg {
+  width: 1.1em;
+  color: #00b4d8;
+  transition: transform 0.3s ease;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .calendario_horas__contenedor {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* estilos geniales de laina */
+.super-cont-horas-calendario{
+    border: solid black 2px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--cafe); /* Texto oscuro */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    height: 600px;
+    justify-content: center;
+    gap: 50px;
 }
 
-.calendario_horas__celda:hover {
-    background-color: var(--axul); /* Azul suave para hover */
-    color: var(--blanco2); /* Texto blanco al hacer hover */
-    transform: scale(1.05); /* Pequeño zoom */
+.reloj-icono {
+    margin-right: 0.4rem;
+    color: #00b4d8;
 }
 
-.calendario__boton_atras {
-    padding: 10px 20px; /* Espaciado más amplio */
-    border-radius: 25px;
-    margin: 10px 0;
-    background-color: var(--cafe); /* Botón café oscuro */
-    color: var(--blanco2); /* Texto blanco */
-    font-size: 14px;
-    font-weight: bold;
-    border: none; /* Sin borde */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+.calendario_horas__titulo{
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
 }
 
-.calendario__boton_atras:hover {
-    background-color: var(--axul); /* Azul vibrante para hover */
-    transform: scale(1.1); /* Efecto de zoom */
-}
