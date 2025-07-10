@@ -1,7 +1,8 @@
 import React, { useState ,useEffect } from "react";
 import Card_cita from "./Card_cita";
 import Calendario_horas from "./Calendario_horas";
-import "./calendario_citas.css";
+import "./calentadario_citas.css";
+import './calendario_citas.css'
 
 const CalendarioCitas = () => {
   const [index, setIndex] = useState(0);
@@ -153,42 +154,42 @@ const CalendarioCitas = () => {
 
       <div className="calendario">
         <div className="busqueda-medico">
-          <div className="busqueda-wrapper">
-            <div className="icono-busqueda">
-              <svg
-                className="svg-busqueda"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 
-                    4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-
-            <input
-              onBlur={() => setTimeout(() => setBusqueda(""), 200)}
-              type="text"
-              className="input-busqueda"
-              placeholder="Buscar médico por nombre..."
-              value={busqueda}
-              onChange={(e) => {
-                const valor = e.target.value;
-                setBusqueda(valor);
-                const filtro = listaMedicos.filter((m) =>
-                  `${m.usuario.first_name} ${m.usuario.last_name}`
-                    .toLowerCase()
-                    .includes(valor.toLowerCase())
-                );
-              }}
-            />
-
-            <button className="btn-buscar">Buscar</button>
+        <div className="busqueda-wrapper">
+          <div className="icono-busqueda">
+            <svg
+              className="svg-busqueda"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 
+                  4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clipRule="evenodd"
+              />
+            </svg>
           </div>
+
+          <input
+            onBlur={() => setTimeout(() => setBusqueda(""), 200)}
+            type="text"
+            className="input-busqueda"
+            placeholder="Buscar médico por nombre..."
+            value={busqueda}
+            onChange={(e) => {
+              const valor = e.target.value;
+              setBusqueda(valor);
+              const filtro = listaMedicos.filter((m) =>
+                `${m.usuario.first_name} ${m.usuario.last_name}`
+                  .toLowerCase()
+                  .includes(valor.toLowerCase())
+              );
+            }}
+          />
+
+          <button className="btn-buscar">Buscar</button>
+        </div>
 
           {busqueda.trim() && medicosFiltrados.length > 0 && (
             <ul className="busqueda-medico__lista">
@@ -206,39 +207,73 @@ const CalendarioCitas = () => {
             </ul>
           )}
           {medicoSeleccionado && (
-            <div className="medico-seleccionado-banner">
-              <span>
-                👨‍⚕️ <strong>{medicoSeleccionado.usuario.first_name} {medicoSeleccionado.usuario.last_name}</strong> – 
-                <em> {medicoSeleccionado.especialidad || "Sin especialidad"} </em>
-              </span>
-              <button className="btn-limpiar-medico" onClick={() => setMedicoSeleccionado(null)}>
-                ❌ Quitar filtro
-              </button>
-            </div>
+          <div className="medico-seleccionado-banner">
+            <span className="nombre-medico">
+              <strong className="texto-resaltar-perfil-medico">
+                {medicoSeleccionado.usuario.first_name} {medicoSeleccionado.usuario.last_name}
+              </strong>
+              <em className="especialidad-medico">
+                {" "}– {medicoSeleccionado.especialidad || "Sin especialidad"}
+              </em>
+            </span>
+
+            <button className="btn-limpiar-medico" onClick={() => setMedicoSeleccionado(null)}>
+              <b>Quitar filtro</b>
+            </button>
+          </div>
           )}
 
         </div>
             
 
-        <div className="calendario__mes-navegacion">
-          <button
-            className="calendario__btn-mes"
-            onClick={handleRestaMes}
-            disabled={index === 0}
-          >
-            ← {texto_meses[index - 1] || ""}
-          </button>
+          <div className="calendario__mes-navegacion">
+            <button
+              className="btn-mes-anterior"
+              onClick={handleRestaMes}
+              disabled={index === 0}
+            >
+              <span>{texto_meses[index - 1] || "Anterior"}</span>
+              <div className="icono-btn-mes">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M7.828 11l5.364-5.364-1.414-1.414L4 12l7.778 7.778 1.414-1.414L7.828 13H20v-2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
 
-          <h2 className="calendario__mes-actual">{texto_meses[index]}</h2>
+            <h2 className="calendario__mes-actual">{texto_meses[index]}</h2>
 
-          <button
-            className="calendario__btn-mes"
-            onClick={handleSumaMes}
-            disabled={index === 11}
-          >
-            {texto_meses[index + 1] || ""} →
-          </button>
-        </div>
+            <button
+              className="btn-mes-siguiente"
+              onClick={handleSumaMes}
+              disabled={index === 11}
+            >
+              <div className="icono-btn-mes">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+              <span>{texto_meses[index + 1] || "Siguiente"}</span>
+            </button>
+          </div>
+
 
         <div className="calendario__cabecera-semana">
           {["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"].map((dia, i) => (

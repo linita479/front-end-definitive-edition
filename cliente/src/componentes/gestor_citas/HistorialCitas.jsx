@@ -55,20 +55,25 @@ const HistorialCitas = () => {
 });
   return (
     <div className="tabla-citas">
-      <h2>📋 Citas Médicas</h2>
+      <h2 className="titulo-ver-citas-medicas">
+        <i className="fas fa-notes-medical" style={{ marginRight: "0.5rem", color: "#7b52b9" }}></i>
+        Citas Médicas
+      </h2>
 
       <div className="filtros-citas">
         <input
           type="text"
-          placeholder="🔍 Buscar por paciente..."
+          placeholder="Buscar por paciente..."
           value={busquedaPaciente}
           onChange={(e) => setBusquedaPaciente(e.target.value)}
+          className="input-buscar-paciente"
         />
         <input
           type="text"
-          placeholder="🔍 Buscar por médico..."
+          placeholder="Buscar por médico..."
           value={busquedaMedico}
           onChange={(e) => setBusquedaMedico(e.target.value)}
+          className="input-buscar-medico"
         />
       </div>
 
