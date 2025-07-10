@@ -42,6 +42,11 @@ const LoginP = () => {
           // Aquí puedes redirigir al gestor de TH a su dashboard
           navigate('/modulo_th');
         }
+        if (result.tipo_usuario === "auxiliar") {
+          // Aquí puedes redirigir al gestor de TH a su dashboard
+          navigate('/auxpage');
+        }
+        
         if(!("tipo_usuario" in result)){
           navigate('/usuario_no_rol');
         }

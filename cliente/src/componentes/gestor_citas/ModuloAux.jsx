@@ -3,7 +3,9 @@ import NavBar from "../objetos/NavBar";
 
 const ModuloCitas = () => {
     const listOpcions = [
-        {
+
+  { name: "Inicio", path: "dashboar-aux", icono: "fas fa-home" },
+  {
             name: "Citas",
             icono: "fas fa-calendar-check", // 📅 ícono principal
             subOpciones: [

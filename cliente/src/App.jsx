@@ -44,6 +44,7 @@ import CalendarioCitasP from './componentes/pacientes/CalendarioCitasP.jsx'
 import HistorialCitasP from './componentes/pacientes/HistorialCitasP.jsx'
 import DatosPaciente from './componentes/pacientes/DatosPaciente.jsx.jsx'
 import Dashboard from './componentes/gerente/dashboard.jsx'
+import DashboardGestor from './componentes/Gestorth/paginas/Dashboard.jsx'
 
 function App() {
   const [isActive, setIsActive] = useState(false);
@@ -125,6 +126,7 @@ function App() {
             <ModuloCitas />
           </div>
         } >
+          <Route path='dashboar-aux' element={<DashboardGestor/>} />
           <Route path='historial-citas' element={<HistorialCitas/>} />
           <Route path='ver-calendario' element={<CalendarioCitas/>} />
           <Route path='paciente' element={<GestorPaciente/>} />
