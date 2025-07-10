@@ -58,3 +58,113 @@
 .ver-centros-medicos__editar-boton:hover {
   background-color: #005ea6;
 }
+
+.ver-centros-medicos {
+  padding: 30px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f7fbff;
+}
+
+.ver-centros-medicos__titulo {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #023e8a;
+  font-weight: bold;
+}
+
+.tabla-personal {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.ver-centros-medicos__tabla__thead {
+  background: linear-gradient(to right, #0077b6, #00b4d8);
+  color: white;
+}
+
+.ver-centros-medicos__tabla__tr {
+  transition: background-color 0.3s ease;
+}
+
+.ver-centros-medicos__tabla__tr:hover {
+  background-color: #e0f2ff;
+}
+
+.ver-centros-medicos__tabla__thead th,
+.ver-centros-medicos__tabla__tbody td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.ver-centros-medicos__editar-boton {
+  padding: 6px 12px;
+  background-color: #0096c7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.ver-centros-medicos__editar-boton:hover {
+  background-color: #0077b6;
+}
+.item-tabla-sede{
+  color: black;
+}
+
+
+
+
+/* Botón elegante para formulario de registro de médico */
+.editar-btn-guardar-sede {
+  width: 300px;
+  height: 2.3em;
+  margin: 0.5em;
+  background:  hsl(197, 97%, 42%); /* Verde a aguamarina */
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.5s ease;
+}
+
+.editar-btn-guardar-sede:hover {
+  color: #0f172a; /* Oscuro para contraste */
+}
+
+.editar-btn-guardar-sede::after {
+  content: "";
+  background:  hsl(197, 97%, 65%);
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s ease;
+}
+
+.editar-btn-guardar-sede:hover::after {
+  transform: skewX(-45deg) scale(1, 1);
+}
+
+.aaaaaaa{
+  font-size: 22px;
+  font-weight: 700;
+}
+

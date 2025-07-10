@@ -58,23 +58,23 @@ const VerServicios = () => {
         fetchServicios();
     }, [servicios]);
   return (
-    <div className='ver-servicios'>
-      <h2 className='ver-servicios__titulo'>Servicios Registrados</h2>
+    <div className='ver-usuarios'>
+      <h2 className='ver-usuarios__titulo'>Servicios Registrados</h2>
       <table border="1" cellPadding="8" cellSpacing="0" className='ver-servicios__tabla'>
-        <thead className='ver-servicios__tabla__thead'>
-          <tr className='ver-servicios__tabla__tr'>
-            <th>Capítulo</th>
-            <th>Nombre</th>
-            <th>Estado</th>
+        <thead className='ver-usuarios__tabla__thead'>
+          <tr className='ver-usuarios__tabla__tr'>
+            <th className='item-ver-servicios'>Capítulo</th>
+            <th className='item-ver-servicios'>Nombre</th>
+            <th className='item-ver-servicios'>Estado</th>
           </tr>
         </thead>
-        <tbody className='ver-servicios__tabla__tbody'>
+        <tbody className='ver-usuarios__tabla__tbody'>
           {servicios.map((servicio, index) => (
-            <tr key={index} className='ver-servicios__tabla__tr'>
+            <tr key={index} className='ver-usuarios__tabla__tr'>
               <td>{servicio.capitulo}</td>
               <td>{servicio.nombre}</td>
               <td>{servicio.estado ? 'Activo' : 'Inactivo'}</td>
-              <td><input className='ver-servicios__checkbox' type="checkbox" checked={servicio.estado} onChange={() => {fetchServiciosActualizar(servicio.capitulo, servicio.estado)}} /></td>
+              <td><input className='vver-usuarios__checkbox' type="checkbox" checked={servicio.estado} onChange={() => {fetchServiciosActualizar(servicio.capitulo, servicio.estado)}} /></td>
             </tr>
           ))}
         </tbody>

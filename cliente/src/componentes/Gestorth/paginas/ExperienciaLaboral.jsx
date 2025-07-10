@@ -198,7 +198,7 @@ const ExperienciaLaboral = () =>{
                 <p><strong>Email:</strong> {usuario.email || "No disponible"}</p>
 
                 <button className="btn-agregar-exp" onClick={() => setMostrarFormularioE(true)}>
-                    ➕ Agregar experiencia
+                    Agregar experiencia
                 </button>
                 </div>
             </div>

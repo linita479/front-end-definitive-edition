@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import EtiquetaInput from '../objetos/EtiquetaInput';
 import Botones from '../objetos/Botones';
+import './VerSede.css'
 
 const EditarCentroModal = ({ centro, onClose}) => {
   const { register, handleSubmit ,formState: { errors } } = useForm({
@@ -43,7 +44,7 @@ const EditarCentroModal = ({ centro, onClose}) => {
   return (
     <div style={styles.modalOverlay}>
       <div style={styles.modalContent}>
-        <h2>Editar Centro Médico</h2>
+        <h2 className='aaaaaaa'>Editar Centro Médico</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
             <EtiquetaInput 
         label="NIT" 
@@ -79,9 +80,9 @@ const EditarCentroModal = ({ centro, onClose}) => {
         register={register('email', { required: "Este campo es obligatorio" })}
       />
       {errors.email && <span>{errors.email.message}</span>}
-          <Botones name="Guardar Cambios" />
+          <button name="Guardar Cambios" className='editar-btn-guardar-sede'>Guardar cambios</button>
         </form>
-        <button onClick={onClose} style={{ marginTop: '10px' }}>Cancelar</button>
+        <button onClick={onClose} style={{ marginTop: '10px' }} className='editar-btn-guardar-sede'>Cancelar</button>
       </div>
     </div>
   );

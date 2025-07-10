@@ -50,3 +50,62 @@
   cursor: pointer;
   accent-color: #004080;
 }
+
+
+.ver-usuarios {
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f2f8fd;
+}
+
+.ver-usuarios__titulo {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #023e8a;
+  margin-bottom: 20px;
+}
+
+.ver-servicios__tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 4px 20px rgba(0, 119, 182, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ver-usuarios__tabla__thead {
+  background: linear-gradient(to right, #0077b6, #00b4d8);
+  color: white;
+}
+
+.ver-usuarios__tabla__tr {
+  transition: background-color 0.3s ease;
+}
+
+.ver-usuarios__tabla__tr:hover {
+  background-color: #e8f4fa;
+}
+
+.ver-usuarios__tabla__thead th,
+.ver-usuarios__tabla__tbody td {
+  padding: 14px 18px;
+  text-align: center;
+  font-size: 15px;
+  border-bottom: 1px solid #dce6f1;
+}
+
+.ver-usuarios__tabla__tbody td {
+  color: #333;
+}
+
+.vver-usuarios__checkbox {
+  transform: scale(1.2);
+  accent-color: #0077b6; /* Cambia el color del checkbox */
+  cursor: pointer;
+}
+
+.item-ver-servicios{
+  color: black;
+}
